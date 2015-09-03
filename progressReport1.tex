@@ -1,23 +1,31 @@
 \documentclass[a4paper,12pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage{lipsum}
-\usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage{lipsum}
+\usepackage{amsmath,amsthm}
+\usepackage[english]{babel}
 
+%\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{longtable}
-\usepackage{svg}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+%\usepackage{longtable}
+%\usepackage{svg}
 \usepackage{calc}
 \usepackage{rotating}
-%\usepackage[usenames,dvipsnames]{color}
-%\usepackage{fancyhdr}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
 %\usepackage{subfigure}
-%\usepackage{hyperref}
+\usepackage{hyperref}
 
-
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
 \graphicspath{{images/}}
 
 \begin{document}
@@ -47,29 +55,65 @@
 \begin{center}
 	 \bfseries Supervisor: Prof. Sourav Patra
 \end{center}
-
-   
-
-    
-  
-
 \vskip1.2in
-
 \centering
 \bfseries
 \Large \the\year
 \end{titlepage}
 
 \section{Introduction}
+Robustness of a system is defined by it's ability to be insensitive to component variations. For a control system, these variations could either be plant disturbances and parameter variations within the plant. These variations in a control system could also be due to the sensor noise in measurement. Hence, the aim of a control engineer is to design the controller in such a way that it deals with these uncertainities. This controller design method is called Robust Controller Design. \\
+Robustness is one of the major advantages of a feedback control system and hence is one of the major topics of study in the Modern Control Theory. The theory of Robust Control began in the late 1970s and early 1980s and since then there has been a huge effort in various methods to achieve specified performance of a system robustly. The most widespread and important of these methods is the H-inifinity loop-shaping technique which was developed by McFarlane and Glover of Cambridge University. Developing on this research there have been various different algorithms to achieve H-inifinity loop-shaping control for a given system. Some of these shall be explored in this project. \\
+For application of a robust controller to a particular application the constraints of the system need to be modeled as well and the controller design has to be changed accordingly. This project aims to study in detail the H-infinity loop-shaping robust controller design technique and then model a mobile robot system in such a way that a robust controller for the mobile robot's locomotion is designed. Some challenges that might be faced in this process are those concerning the complexity of the very theory of  H-inifinity loop-shaping technique. Moreover, to design the controller for a mobile robot, would induce further many challenges with respect to actuator saturation and other modeling constraints.\\
+The motivation for this research comes from the fact that usually great amount of experimental, hit and trial based methods are employed for controlling a mobile robot. In this sense, if a robust control system can be designed it would provide great ease for further development of technology on robots. Robotics is finding it's way into a human's daily life at a pace which was never expected and is more than ever before. The applications range from big industries to small household chores and beyond. In this changing world, the control of such a mobile robot is essential and important to be achieved in a very robust manner so that more and more complex applications can be designed on top of this.
 \section{Background}
+The robust control theory is covered in great detail in the book by authors Kemin Zhou Keith Glover and J C Doyle in their book "Robust and Optimal Control" \cite{book}. The book was published in 1996 and hence it covers most of the research and contributions by various pioneers to modern control theory. $H_{\infty}$ methods in control theory are used to design controllers which guarantee specific performance with stability. The control problem is expressed as an optimization problem and then the designed controller solves this optimization. Loop shaping control technique is a part of classical control that has been existent in control theory since a long time. Hence, the amalgamation of the two, known as $H_{\infty}$ loop-shaping design method combines the two method and achieves a good performance. \\
+The progress in robust control design techniques has been enormous and has even been applied to the industry to an aircraft. The 1995 publication breifs about the same \cite{aero}. Despite the popularity, the advantages of a robust controller are such that in future most of the controllers would be preferred to be designed using a robust algorithm and hence there remains a great scope of learning and research in this field. \\
+\label{bg}
 \section{Robust Control Study : Required Math}
+
+As explained in section \ref{bg}, the robust controller design revloves around solving an optimization problem and hence it is obvious that various mathematical techniques need to be learnt and applied to successfully be able to learn the theory of $H_{\infty}$ control technique. Hence, this has been taken as the first step in this project. The following subsections go over the basics required as prerequisites for all the study on robust control that shall follow.
 	\subsection{Norms and Normed Spaces}
+	
 		\subsubsection{Types of Norms}
+			\paragraph{p-Norm}
+			\paragraph{Supremum Norm}
+			\paragraph{Infimum Norm}
 	\subsection{Banach Spaces}
+	A complete normed space is called a Banach Space. For a norm space to be complete, the following two properties should be satisfied for any vector $x, x_{n}$ and $x_{m}$ in the general vector space $V$.
+		\begin{enumerate}
+			\item When $\norm{(x_{n} -x)}\rightarrow 0$, then $x_{n} \rightarrow x$. Known as the convergence property.
+			\item For $n$ and $m \rightarrow \infty$, $\norm{x_{n}-x_{m}} \rightarrow 0$. Known as the Cauchy Sequence property.
+		\end{enumerate}
 		\subsubsection{Examples}
 	\subsection{Isometric Isomorphism}
-	\subsection{Inner Product and Inner Product Spaces}
+	An operator T from a vector space $V_{1}$ to $V_{2}$ takes $x_{1} \epsilon V_{1}$ to a value $Tx_{1} \epsilon V_{2}$. This operator is called an isometric isomorphism when the norm of $Tx_{1}$ is same as the norm of the initial value in vector space $V_{1}$. It can be formulated as follows:
+		\begin{equation}
+			\norm{Tx_{1}} = \norm{x_{1}}
+			\label{iso}
+		\end{equation}
+	A straight and simple example for an operator which performs isometric isomorphism is a Laplace or Fourier Transform. The eq.\ref{iso} follows for these transformation operators from the Parseval's Theorem \cite{parseval}.
+	\subsection{Inner Product and Inner Product Spaces} The inner product between two vectors $x$ and $y$ is denoted by $\left\langle x, y \right\rangle$ and is given by $x^{*}y$ where the * operator is the adjoint operator which can be calculated by taking the transpose and then the conjugate of the vector. Ignoring the matrix dimensions we can also write the inner product in the following manner:
+		\begin{equation}
+			\left\langle x, y \right\rangle = x^{*}y = \sum\limits_{i=1}^n (\bar{x_{i}}y_{i})
+			\label{in}
+		\end{equation}
+		
+		If for a vector space $V$, if the inner product is defined in the manner as in eq. \ref{in} and it exists. Then the vector space V is called an Inner Product Space.
 		\subsubsection{Signficance of Inner Product}
+			The inner product operation gives a scalar output related to the two vectors. This scalar is significant in vector and geometrical analysis in many ways. The inner product is used to determine the length of a vector, angle between two vectors and it is also used to define the important property of orthogonality. The following equations have been mentioned without proof to summarize the results:
+			
+			\begin{align}
+				\intertext{For length of the vector,}
+				\left\langle x, x \right\rangle &= |x|^{2} \\
+				\intertext{Angle between two vectors x and y can be given as}
+				cos(\theta)&= \frac{\left\langle x, y \right\rangle}{|x| |y|} \\
+				\intertext{where $\theta$ is the angle between x and y. Finally, the two vectors will be orthogonal to each other when -}
+				\theta &= \frac{\pi}{2} \\
+				\intertext{that is, }
+				\left\langle x, y \right\rangle &= 0 
+			\end{align}
+			
 	\subsection{Hilbert Spaces}
 		\subsubsection{Examples}
 	\subsection{Orthogonality}
@@ -82,5 +126,11 @@
 	\subsection{Induced System Gain}
 	\subsection{Examples}
 \section{Future Work, Study and Timeline}
+\begin{thebibliography}{20}
+
+\bibitem{book} Kemin Zhou et. al. 1995 \emph{Robust and Optimal Control}
+\bibitem{aero} R. Hyde et.al. 1995 \emph{VSTOL first flight on an H/sub infinity / control law}
+\bibitem{parseval} Parseval's Theorem and it's Proof, \emph{Imperial College London} \url{http://wwwf.imperial.ac.uk/~jdg/eeft3.pdf}
+\end{thebibliography}
 
 \end{document} 
