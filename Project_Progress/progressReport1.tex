@@ -1,0 +1,292 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage{lipsum}
+\usepackage{amsmath,amsthm}
+\usepackage[english]{babel}
+
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\usepackage{calc}
+\usepackage{rotating}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+%\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{calc}
+\usepackage{rotating}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+%\usepackage{subfigure} 
+\usepackage{hyperref}
+
+
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\graphicspath{{images/}}
+
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\LARGE{Indian Institute of Technology (IIT) Kharagpur}
+	\vskip0.5in
+  \large{B.Tech Project Report \\Mid Term Evaluation 2015}
+  \vskip0.2in
+  \bfseries
+	\noindent\rule[0.5ex]{\linewidth}{4pt}
+  
+
+  \vskip.1in
+  \textsc{\Large Robust Controller Design Using $H_{\infty}$-Loop Shaping Approach}
+  \vskip.1in
+\noindent\rule[0.5ex]{\linewidth}{4pt}
+	
+\end{center}
+\vskip1.3in
+\begin{minipage}[t]{7cm}
+\flushleft
+\textsc{Author:}
+
+Ayush Pandey \\12IE32001\\ IIT Kharagpur \\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7cm}
+\flushright
+\textsc{Supervisor:}
+
+Dr. Sourav Patra \\IIT Kharagpur
+\end{minipage}
+\vskip1.2in
+
+\begin{center}
+\textbf{Department of Electrical Engineering \\ 2015}
+\vskip0.2in
+\includegraphics[scale=0.2]{logo}
+\end{center}
+\end{titlepage}
+
+\section{Introduction}
+Robustness of a system is defined by it's ability to be insensitive to parameter variations and unwanted exogenous signals. For a control system, these variations could either be plant disturbances and parameter variations within the plant or these could be due to the sensor noise in measurement. (See the block diagram in figure \ref{simple}).
+		\begin{figure}[H]
+ 
+			  \centering
+			  
+%			  \includesvg[width=1.4\textwidth]{simple}
+			  \def\svgscale{0.3}
+			  \tiny{
+			  \input{simple.pdf_tex}
+			  }
+			  \caption{A control system with plant disturbances and measurement noise}
+			 \label{simple}
+		\end{figure} Hence, the aim of a control engineer is to design a controller in such a way that it deals with these uncertainities. This controller design method is called robust controller design. \\
+Robustness is one of the major advantages of a feedback control system and hence is one of the major topics of study in the modern control theory. The theory of robust control began in the late 1970s and early 1980s and since then there has been a huge effort in various methods to achieve specified performance of a system robustly. The most widespread and important of these methods is the H-inifinity loop-shaping technique which was developed by McFarlane and Glover of Cambridge University. Developing on this research there have been various different algorithms to achieve H-inifinity loop-shaping control for a given system. Some of these shall be explored in this project. \\
+For application of a robust controller to a particular application the constraints of the system need to be modeled as well and the controller design has to be changed accordingly. This project aims to study in detail the H-infinity loop-shaping robust controller design technique and then model a mobile robot system in such a way that a robust controller for the mobile robot's locomotion is designed. Some challenges that might be faced in this process are those concerning the complexity of the very theory of  H-inifinity loop-shaping technique. Moreover, designing the controller for a mobile robot would be faced with many challenges with respect to actuator saturation and other modeling constraints.\\
+The motivation for this research comes from the fact that usually great amount of experimental, hit and trial based methods are employed for controlling a mobile robot. In this sense, if a robust control system can be designed it would provide great ease for further development of technology on robots. Robotics is finding it's way into our lives at a pace which was never expected and is more than ever before. The applications range from big industries to small household chores and beyond. In this changing world, the control of such a mobile robot is essential and important to be achieved in a very robust manner so that more and more complex applications can be designed on top of it.
+\section{Background}
+The robust control theory is covered in great detail in the book by authors Kemin Zhou, Keith Glover and J C Doyle in their book "Robust and Optimal Control" \cite{book}. The book was published in 1995 and hence it covers most of the research and contributions by various pioneers to modern control theory. $H_{\infty}$ methods in control theory are used to design controllers which guarantee specific performance with stability. The control problem is expressed as an optimization problem and then the designed controller solves this optimization. Loop shaping control technique is a part of classical control that has been existent in control theory since a long time. Hence, the amalgamation of the two, known as $H_{\infty}$ loop-shaping design method combines the two methods and achieves a good performance. \\
+The progress in robust control design techniques has been enormous and has even been applied to the industry to an aircraft. The 1995 publication breifs about the same \cite{aero}. Despite the popularity, the advantages of a robust controller are such that in future most of the controllers would be preferred to be designed using a robust algorithm and hence there remains a great scope of learning and research in this field. \\
+\label{bg}
+\section{Robust Control System: Preliminaries}
+
+As explained in section \ref{bg}, the robust controller design revloves around solving an optimization problem and hence it is obvious that various mathematical techniques need to be learnt and applied to successfully be able to learn the theory of $H_{\infty}$ control technique. Hence, this has been taken as the first step in this project. The following subsections go over the basics required as prerequisites for all the study on robust control that shall follow. 
+	\subsection{Norms and Normed Spaces}
+	In linear algebra, norm is a function that is defined for a vector which gives a positive scalar quantity representing the vector's size. It can be understood as an analogy to the absolute value function that we have for scalar quantities. A vector space for which the supremum norm is defined is known as a normed space. Various kinds of norms are defined in the following section.
+		\subsubsection{Types of norms}
+			\paragraph{p-Norm} The p-norm is the most commonly used form of norm used in linear algebra. For a vector x, the p-normis given by
+				\begin{equation}
+					\norm{x}_{p} := \left(\sum\limits_{i=1}^n  (x_{i})^{p}\right)^{\frac{1}{p}}
+				\end{equation}
+				p can take any value in [1,$\infty$) which would give different norms such as the 2-norm and so on. The two norm is also known as the euclidean norm.
+			\paragraph{Supremum Norm} Also known as the "Least Upper Bound". For a subset S of a partially ordered set T, having elements ${x_{1},x_{2},..}$ where $x_{i}\:\in \:\mathbb{C}$. The supremum for this set is given by the least element more than or equal to all elements of S. It may or may not exist. In a similar manner, the supremum norm is defined. Without the loss of generality, we define the supremum norm here on the complex space $\mathbb{C}$. Let F be the space of all bounded complex-valued continuous functions defined on $\mathbb{C}$. The supremum norm is the norm defined on F by,
+			\begin{equation}
+				\norm{f}_{\infty}=\sup_{x\: \in \:\mathbb{C}} |f(x)|
+			\end{equation}
+		
+	\subsection{Banach Spaces}
+	A complete normed space is called a Banach Space. For a norm space to be complete, the following two properties should be satisfied for any vector $x, x_{n}$ and $x_{m}$ in the general vector space $V$.
+		\begin{enumerate}
+			\item Convergence Property : When $\norm{(x_{n} -x)}\rightarrow 0$, then $x_{n} \rightarrow x$.
+			\item Cauchy Sequence Property: For $n$ and $m \rightarrow \infty$, $\norm{x_{n}-x_{m}} < \epsilon$, for small $\epsilon$. 		\end{enumerate}
+	
+	\subsection{Isometric Isomorphism}
+	An operator T from a vector space $V_{1}$ to $V_{2}$ takes $x_{1} \:\in\: V_{1}$ to a value $Tx_{1} \:\in \:V_{2}$. This operator is called an isometric isomorphism when the norm of $Tx_{1}$ is same as the norm of the initial value in vector space $V_{1}$. It can be formulated as follows:
+		\begin{equation}
+			\norm{Tx_{1}} = \norm{x_{1}}
+			\label{iso}
+		\end{equation}
+	A straight and simple example for an operator which performs isometric isomorphism is a Laplace or Fourier Transform. The eq.\ref{iso} follows for these transformation operators from the Parseval's Theorem \cite{parseval}.
+	\subsection{Inner product and inner product spaces} The inner product between two vectors $x$ and $y$ is denoted by $\left\langle x, y \right\rangle$ and is given by $x^{*}y$ where the * operator is the adjoint operator which can be calculated by taking the transpose and then the conjugate of the complex vector.
+		\begin{equation}
+			\left\langle x, y \right\rangle = x^{*}y = \sum\limits_{i=1}^n (\bar{x_{i}}y_{i})
+			\label{in}
+		\end{equation}
+		
+		If for a vector space $V$, the inner product is defined in the manner as in eq. \ref{in} and it exists. Then the vector space V is called an Inner Product Space.
+		\subsubsection{Signficance of inner product}
+			The inner product operation gives a scalar output related to the two vectors. This scalar is significant in vector and geometrical analysis in many ways. The inner product is used to determine the length of a vector, angle between two vectors and it is also used to define the important property of orthogonality. The following equations have been mentioned without proof to summarize the results:
+			
+			\begin{align}
+				\intertext{For length of the vector,}
+				\left\langle x, x \right\rangle &= \norm{x}^{2} \\
+				\intertext{Angle between two vectors x and y can be given as}
+				cos(\theta)&= \frac{\left\langle x, y \right\rangle}{\norm{x} \: \norm{y}} \\
+				\intertext{where $\theta$ is the angle between x and y. Finally, the two vectors will be orthogonal to each other when -}
+				\theta &= \frac{\pi}{2} \\
+				\intertext{that is, }
+				\left\langle x, y \right\rangle &= 0 
+			\end{align}
+			
+	\subsection{Hilbert Spaces}
+	A Hilbert Space is a vector spaces which is
+		\begin{enumerate}
+			\item Complete normed space
+			\item Inner product space
+		\end{enumerate}
+	As is obvious then, that any Hilbert Space will always be a Banach Space as Hilbert Spaces would be subspaces of their corresponding Banach Spaces.
+		\subsubsection{Examples} There can be many common examples for a Hilbert Space. Some of them are
+			\begin{enumerate}
+				\item The space $\mathbb{C}^{n}$, with the usual inner product defined is a finite dimensional Hilbert Space.
+				\item The space $\mathbb{C}^{n\:\times\:m}$ of matrix valued functions is a Hilbert Space with the inner product defined as:
+					\begin{equation}
+						\left\langle A, B \right\rangle := Trace A^{*}B = \sum\limits_{i=1}^n \sum\limits_{j=1}^m \bar{a_{ij}}b_{ij} \:\:\:\: \forall A,B \:\in \:\mathbb{C}^{n \times m}
+					\end{equation}
+				\item $l_{2}(-\infty,\infty)$ is an infinite dimensional Hilbert Space which consists of sequences ${....,x_{-2},x_{-1},x_{0},x_{1},...}$ (real or complex) which are square summable. The inner product is given by:
+					\begin{align*}
+						\left\langle x, y \right\rangle &:= \sum\limits_{i=-\infty}^\infty \bar{x_{i}}y_{i}\\
+						\intertext{If each component is a vector or a matrix, then the inner product shall be given by}
+						\left\langle x, y \right\rangle &:= \sum\limits_{i=-\infty}^\infty Trace \: (x_{i}^{*}y_{i})\\						
+					\end{align*}
+				\item Subspaces of $l_{2}$ viz. $l_{2}[0,\infty],l_{2}(-\infty,0]$ are defined similarly.
+				\item The space of matrix valued functions on $\mathbb{R}$ which are square integrable and Lebesgue measurable is denoted by $\mathbb{L}_{2}(I)$ for $I \subset \mathbb{R}$. The inner product is given by:
+				\begin{align*}
+						\left\langle f, g \right\rangle &:= \int\limits_{I}f(t)^*g(t)dt\\
+						\intertext{If the functions are vector or matrix valued, then the inner product shall be given by}
+						\left\langle f, g \right\rangle &:= \int\limits_{I} Trace \: [f(t)^{*}g(t)]dt\\						
+					\end{align*}
+				\item Again on similar lines, $\mathbb{L}_{2+}(I)$ and $\mathbb{L}_{2-}(I)$ will be defined, where\\ $\mathbb{L}_{2+} = \mathbb{L}_{2}[0,\infty)$ is a subspace of $\mathbb{L}_{2}(\infty,\infty)$ and \\
+		$\mathbb{L}_{2-} = \mathbb{L}_{2}(-\infty,0]$ is a subspace of $\mathbb{L}_{2}(\infty,\infty)$.
+		
+			\end{enumerate}
+	\subsection{Orthogonality}
+	The $\mathbb{L}_{2+}$ space has all matrix or vector valued functions which are zero for $t<0$ and $\mathbb{L}_{2-}$ has all the functions with $t>0$ equal to zero. This implies that inner product between any two functions, one from $\mathbb{L}_{2+}$ and other from $\mathbb{L}_{2-}$ will always be equal to zero. Hence, the subspaces $\mathbb{L}_{2+}$ and $\mathbb{L}_{2-}$ are orthogonal to each other. It is also easy to see from here that $\mathbb{L}_{2}$ is actually an orthogonal direct sum of it's subspaces $\mathbb{L}_{2+}$ and $\mathbb{L}_{2-}$.
+	
+	\subsection{Hardy Spaces}
+		A function f(t) is said to be analytic at a point $t_{0}$ if it is continuous at that point and in the neighbourhood along with being differentiable at $t_{0}$. For analytic functions over a set S, the derivatives of all orders at all points in S of the function f(t) exist. This also implies that the function will have a power series at all those points where it is analytic. The opposite of this is also true, that is, when the power series exists for a function at a point then it is differentiable and analytic at the given point as well. If a function is a matrix valued function then all elements of the matrix should be analytic at the considered point or at all points in the considered set, whatever may be the case. \\
+		\paragraph{$\mathbb{L}_{2}(j\mathbb{R})$ space} can also be written simply as $\mathbb{L}_{2}$ space is a Hilbert space of matrix valued functions on j$\mathbb{R}$ and consists of all matrix valued functions for which the inner product is defined as follows
+		\begin{align}
+			 \left\langle F, G \right\rangle &:= \frac{1}{2\pi} \: \int\limits_{-\infty}^\infty Trace \: [F^{*}(j\omega)\:G(j\omega)]d\omega \label{inner}\\
+			 \intertext{and the inner product induced norm is given by}
+			 \norm{F}_{2} &:= \sqrt{\left\langle F, F \right\rangle}
+		\end{align}
+		Now, if for a given transfer matrix F (real, rational, strictly proper), if there are no poles on the $j\omega$ axis, then we have a subspace of $\mathbb{L}_{2}$ space known as $\mathbb{RL}_{2}$.
+		 
+		\paragraph{Hardy Spaces} are subspaces of $\mathbb{L}_{2}(j\mathbb{R})$ space but with an additional property of analyticity of the functions. Formally, all matrix valued functions analytic in $Re(s)\: > \:0$ form the $\mathbb{H}_{2}$ space. The inner product can be shown to be equal to the one shown in eq. \ref{inner}. On similar lines as to  $\mathbb{RL}_{2}$, we define  $\mathbb{RH}_{2}$ which is a subspace of $\mathbb{H}_{2}$. The $\mathbb{RH}_{2}$ consists of all real rational and stable (all poles in LHP) transfer matrices. This is because if there were poles in the RHP then the functions would not be analytic anymore.\\ To summarize,
+		\begin{align*}
+		 	\mathbb{L}_{2}(-\infty,\infty) &= \mathbb{L}_{2}(j\mathbb{R}) \\
+		 	\mathbb{L}_{2}(-\infty,0] &= \mathbb{H}_{2}^{\perp} \\
+		 	\mathbb{L}_{2}[0,\infty) &= \mathbb{H}_{2}
+		 \end{align*}
+		 The space $\mathbb{H}_{2}^{\perp}$ is the subspace of $\mathbb{L}_{2}$ having analytic functions in LHP, which implies  $\mathbb{RH}_{2}^{\perp}$ would contain all proper rational transfer matrices having all poles in the RHP.
+		\\Next, we have  $\mathbb{H}_{\infty}$ spaces. The above definitions follow in the same way for $\mathbb{L}_{\infty}(j\mathbb{R})$ , $\mathbb{H}_{\infty}$ and $\mathbb{H}_{\infty}^{-}$ spaces and the $\mathbb{RL}_{\infty}$, $\mathbb{RH}_{\infty}$, $\mathbb{RH}_{\infty}^{-}$ subspaces respectively except that now the norm is not the two norm (obviously) but is the supremum norm. The norms are given by the following set of equations,
+		\begin{align}
+		\intertext{For $\mathbb{L}_{\infty}(j\mathbb{R})$ space}
+		\norm{F}_{\infty} &:= ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)] \\
+		\intertext{For $\mathbb{H}_{\infty}$ space}
+		\norm{F}_{\infty} &:= \sup_{Re(s) > 0} \: \bar{\sigma} [F(s)] = ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)] \\
+		\intertext{The second equality can be regarded as the generalization of maximum modulus theorem for matrix functions. Now for $\mathbb{H}_{\infty}^{-}$ space}
+		\norm{F}_{\infty} &:= \sup_{Re(s) < 0} \: \bar{\sigma} [F(s)] = ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)]
+		\end{align}
+		where $\bar{\sigma}$ is equal to maximum singular value of the matrix, where a singular value of a matrix T is given by $\sqrt{\lambda_{i}(T^{*}T)}$ for ith eigen value of the matrix.
+
+\section{Performance specification significance in a control system} The most important aspect of a control system is to achieve a certain performance specification and hence the controller design should always look into the performance specifications and it's effects on various parameters. Usually, size of different signals is used to specify the performance in a better way. This is where the study shown in previous section comes in handy.
+	\subsection{Induced System Gain} 
+	\begin{figure}[H]
+ 
+			  \centering
+			  
+%			  \includesvg[width=1.4\textwidth]{performance_specs_block_diag}
+			  \def\svgscale{0.3}
+			  \tiny{
+			  \input{performance_specs_block_diag.pdf_tex}
+			  }
+			  \caption{Performance Specifications using Induced System Gain}
+			 \label{perf}
+		\end{figure}
+	For a system (as shown in figure \ref{perf}) with transfer matrix operator G, input u and output z having q-inputs and p-outputs, the G-induced norm is of particular importance as will be illustrated in this section. Here, $ G \:\in\: \mathbb{R}\mathbb{H}_{\infty} $ and G(s) is strictly proper transfer matrix, i.e. $G(\infty) = 0 $.
+	The system can be represented as \\
+	\begin{center}
+		$G : u \rightarrow z$
+	\end{center}
+	For this Multi Input Multi Output (MIMO) system, let $u_{0} \: \in \: \mathbb{R}^{q} $ be the input direction and similarly for the output. The operator norm, i.e. the G-induced norm will give a measure of the output for given input u. As illustrated in the examples below, this norm plays a very important role in performance specifications because the size of the output signal in time domain can be calculated in terms of the frequency domain norm of the transfer matrix and the input direction. 
+	\subsection{Examples}
+	For impulse function input signal with $u_{0}$ as the input direction, the output is given as $z=g*u$ where the * operator denotes the convolution. 
+	\begin{align*}
+		z(t) &= \int\limits_{0}^t g(t-\tau)u(\tau)d\tau\\
+		z(t) &= \int\limits_{0}^t g(t-\tau)u_{0}\delta(\tau)d\tau\\
+		z(t) &= g(t)u_{0}\\
+		\intertext{Now, taking norm we have,}
+		\norm{z}_{2} &= \norm{gu_{0}}_{2}\\
+		\norm{z}_{\infty} &= \norm{gu_{0}}_{\infty}\\
+		\intertext{Using Parseval's Relation, we have}
+		\norm{gu_{0}}_{2} &= \norm{Gu_{0}}_{2}\\
+	\end{align*}
+	As is clear from the above derivation, that time domain "size of signal" can be expressed in terms of the frequency domain norm. The operator induced norm, i.e. the G induced norm here gives the size of change that "G" produces in the input to give out the output. Hence, this specification is important and helpful in controller design.
+	\section{Coprime factorization over $\mathbb{RH_{\infty}}$} For a SISO linear system whose transfer function is given b(s)/a(s), b(s) and a(s) are said to be coprime if they do not have any common roots. Such a representation of the system is often referred to as the minimal realization of the system. For SISO systems, it is always possible to write a transfer function as a ratio of two stable transfer function with no common divisors (i.e. their greatest common divisor (gcd) is 1). This is called coprime factorization of the transfer function as the two factored transfer functions have no common divisors. Mathematically, using Euclid's algorithm we can write transfer functions X(s) and Y(s) in $\mathbb{RH_{\infty}}$ such that for a given transfer function G(s), transfer fucntions M(s) and N(s) in $\mathbb{RH_{\infty}}$ are it's coprime factors such that:
+	\begin{align}
+		&G(s) = N(s)M(s)^{-1}\\
+		\intertext{where X and Y exists such that}
+		&N(s)X(s)+M(s)Y(s)=1
+		\label{euclid}
+	\end{align}
+	The equation \ref{euclid} is known as the Euclid's equation. With some variations, the above is valid for MIMO systems as well. But, for MIMO systems both left and right coprime factorization need to be defined appropriately. In Chapter 5 of \cite{book}, detailed explainations and equations for the same have been given.
+		\subsection{Feedback control interpretation of coprime factorization of a transfer matrix}On changing the control variable by a state feedback \ref{sf}, the right coprime factorization occurs naturally as we will see in this section. For a given system, the state equations can be written as:
+		\begin{align}
+		\textbf{\.x}&=\textbf{Ax} + \textbf{Bu}\\
+		\textbf{y}&=\textbf{Cx} + \textbf{Du}
+		\end{align}
+		\begin{figure}[H]
+ 
+			  \centering
+			  
+%			  \includesvg[width=1.4\textwidth]{state_feedback}
+			  \def\svgscale{1.8}
+			  \tiny{
+			  \input{state_feedback.pdf_tex}
+			  }
+			  \caption{A Control System with State Feedback}
+			 \label{sf}
+		\end{figure}
+		When a state feedback is used such that $u=r-Fx$, where F is such that A+BF is stable. The state space representation gets transformed to:
+		\begin{align}
+		\textbf{\.x}&=\textbf{(A+BF)x} + \textbf{Bu}\\
+		\textbf{y}&=\textbf{(C+DF)x} + \textbf{Du}
+		\end{align}		
+		Now, on calculating the closed loop transfer matrix P=y/r (see figure \ref{sf}), we see that it's coprime factors are the transfer matrices r/u and y/u.
+		\section{Future work and timeline}
+	The main goal is to learn the $H_{\infty}$ loop-shaping controller design technique. To completely understand it, various preliminary topics need to be covered. Hence, future work comprises of study of the following topics (a rough timeline for each has also been mentioned):
+		\begin{enumerate}
+			\item Loop Shaping : By Mid October
+			\item Linear Fractional Transformation and Algebraic Riccati Equations : By the end of October
+			\item $H_{\infty}$ control theory
+			\item $H_{\infty}$ loop-shaping controller design 
+		\end{enumerate}
+\begin{thebibliography}{20}
+
+\bibitem{book} Kemin Zhou et. al. 1995 \emph{Robust and Optimal Control}
+\bibitem{aero} R. Hyde et.al. 1995 \emph{VSTOL first flight on an $H_{\infty}$ control law}
+\bibitem{parseval} Parseval's Theorem and it's Proof, \emph{Imperial College London} \url{http://wwwf.imperial.ac.uk/~jdg/eeft3.pdf}
+\end{thebibliography}
+\end{document} 

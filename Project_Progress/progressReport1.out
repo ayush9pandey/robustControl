@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.3}{Robust Control System: Preliminaries}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Norms and Normed Spaces}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Types of norms}{subsection.3.1}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Banach Spaces}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.3}{Isometric Isomorphism}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.4}{Inner product and inner product spaces}{section.3}% 8
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Signficance of inner product}{subsection.3.4}% 9
+\BOOKMARK [2][-]{subsection.3.5}{Hilbert Spaces}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Examples}{subsection.3.5}% 11
+\BOOKMARK [2][-]{subsection.3.6}{Orthogonality}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.7}{Hardy Spaces}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Performance specification significance in a control system}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Induced System Gain}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{Examples}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Coprime factorization over RH}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Feedback control interpretation of coprime factorization of a transfer matrix}{section.5}% 18
+\BOOKMARK [1][-]{section.6}{Future work and timeline}{}% 19

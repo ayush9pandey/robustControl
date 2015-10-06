@@ -1,0 +1,71 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'simple_block_diagram.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1249.91542969bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.36364386)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{simple_block_diagram.pdf}}%
+    \put(0.10344,0.32145245){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.19500983,0.32484395){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.41036851,0.32145245){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.12102646,0.33652837){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{simple_block_diagram.pdf}}%
+    \put(0.78682222,0.1383128){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.91095173,0.23138565){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{n}}}%
+    \put(0.90124357,0.20266191){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Sensor Noise}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{simple_block_diagram.pdf}}%
+    \put(0.17319483,0.29422933){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{\textbf{-}}}}%
+    \put(0.09846007,0.33473054){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{r}}}%
+    \put(0.18861628,0.33473054){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{e}}}%
+    \put(0.38790898,0.33473054){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{u}}}%
+    \put(0.89563072,0.3311569){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{y}}}%
+    \put(0.02278228,0.34533147){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{1.0683692\unitlength}\raggedright \end{minipage}}}%
+    \put(0.45444661,0.15108251){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{di}}}%
+    \put(0.74582007,0.15587879){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{do}}}%
+  \end{picture}%
+\endgroup%
