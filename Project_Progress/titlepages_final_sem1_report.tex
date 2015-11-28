@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+%\usepackage[utf8]{inputenc}
+%\usepackage{lipsum}
+\usepackage{amsmath,amsthm,mathrsfs}
+\usepackage[english]{babel}
+\usepackage{textcomp}
+%\usepackage[T1]{fontenc}
+\usepackage{graphicx,wrapfig}
+\usepackage{amssymb}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\usepackage{calc}
+\usepackage{rotating}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+%\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{fancyhdr}
+%\usepackage{subfigure} 
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[backend=bibtex,
+style=numeric,
+bibencoding=ascii
+%style=alphabetic
+%style=reading
+]{biblatex}
+\addbibresource{rbc_sem1.bib}
+\usepackage[a4paper, margin=1.5in]{geometry}
+\usepackage{pifont}
+\usepackage{xcolor}
+\usepackage{dirtytalk}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\graphicspath{{images/}}
+%\usepackage{times}
+%\usepackage[scaled=0.8]{beramono}
+ \renewcommand{\familydefault}{\rmdefault}
+
+\begin{document}
+
+\begin{titlepage}
+\pagenumbering{gobble}
+\begin{center}
+
+ 
+%	\noindent\rule[0.5ex]{\linewidth}{4pt}
+%  
+
+  \vskip.1in
+  \textbf{\Large Robust Controller Design Using \textbf{$H_{\infty}$}-Loop Shaping Approach}  \vskip.7in
+  \vskip.7in
+%\noindent\rule[0.5ex]{\linewidth}{4pt}
+	\begin{center}\textit{\small{Report submitted in partial fulfillment to the requirements}} \\
+	\textit{\small{for the degree of}}
+	\vskip.5in
+	\large{\normalsize BACHELOR OF TECHNOLOGY}
+	\vskip.3in
+	\textit{by}
+	\vskip.3in
+	
+	\textbf{\normalsize AYUSH PANDEY}\\
+	\end{center}
+\end{center}
+%\vskip1.3in
+%\begin{minipage}[t]{7cm}
+%\flushleft
+%\textsc{Author:}
+%%
+%Ayush Pandey \\12IE32001\\ IIT Kharagpur \\
+%\end{minipage}
+%\hfill
+%\begin{minipage}[t]{7cm}
+%\flushright
+%\textsc{Supervisor:}
+%
+%Dr. Sourav Patra \\IIT Kharagpur
+%\end{minipage}
+%\vskip1.2in
+\vskip.9in
+\vskip.9in
+\vskip.3in
+
+\begin{center}
+\includegraphics[scale=0.18]{logo}
+\vskip.1in
+\textbf{Department of Electrical Engineering}
+\\
+Indian Institute of Technology, Kharagpur
+\\
+West Bengal, INDIA 721302\\
+November 2015
+
+\end{center}
+\end{titlepage}
+
+\begin{wrapfigure}[1]{l}{0.001\textwidth}
+\includegraphics[width=0.15\textwidth]{logo}
+\end{wrapfigure}
+
+\setlength{\parindent}{85pt}
+
+ \large{Department of Electrical Engineering\\
+} \-\hspace{3cm}\normalsize{Indian Institute of Technology, Kharagpur}
+\\
+ \-\hspace{3cm}West Bengal, INDIA 721302\\
+ \-\hspace{3cm}November 2015\\ \\
+\rule[2pt]{1.1\linewidth}{1pt}
+\vskip.9in
+\begin{center} \Large{\textbf{Certificate}} \end{center}
+\vskip.4in
+{\setlength{\parindent}{0cm}This is to certify that the report entitled \textbf{Robust Controller Design Using
+$H_{\infty}$ Loop Shaping Approach}, submitted by \textbf{Ayush Pandey}, an undergraduate student, in the \textit{Department of Electrical Engineering, Indian Institute of Technology,
+Kharagpur, India,} for the award of the degree of Bachelor of Technology, is a record of
+the work carried out by him under our supervision and guidance. Neither this report nor any part of it has been submitted for any degree or academic award elsewhere.}
+\vskip.9in
+\vskip.9in
+\parindent=0em
+\begin{minipage}[p]{10cm}
+\begin{flushleft}
+\textbf{Dr. Sourav Patra}
+\\Assistant Professor,\\
+Department of Electrical Engineering,\\ Indian Institute of Technology,
+Kharagpur,\\ INDIA 721302
+\end{flushleft}
+\end{minipage}
+
+\vskip.9in
+\vskip.9in
+\vskip.9in
+\vskip.9in
+\end{document}

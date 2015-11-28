@@ -1,0 +1,75 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Background and Motivation}{3}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Preliminaries}{4}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Vector Norms and Normed Spaces}{4}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}Types of norms}{4}{subsubsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{p-Norm}{4}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Supremum Norm}{4}{section*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}Banach Spaces}{5}{subsection.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Isometric Isomorphism}{5}{subsection.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.4}Inner product and Inner Product Spaces}{5}{subsection.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.4.1}Signficance of inner product}{5}{subsubsection.3.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.5}Hilbert Spaces}{6}{subsection.3.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.5.1}Examples}{6}{subsubsection.3.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.6}Orthogonality}{7}{subsection.3.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.7}Hardy Spaces}{8}{subsection.3.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{$\mathbb {L}_{2}(j\mathbb {R})$ space}{8}{section*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Hardy Spaces}{8}{section*.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.8}Induced System Gain}{9}{subsection.3.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.9}Induced Matrix Norm}{9}{subsection.3.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.10}Examples}{10}{subsection.3.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Coprime factorization over $\mathbb {RH_{\infty }}$}{11}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Feedback control interpretation of coprime factorization of a transfer matrix}{11}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Linear Fractional Transformation}{12}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Basic Principle}{13}{subsection.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Spring Mass Damper System : LFT Configuration}{13}{subsection.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.3}Generalized SISO Control System Block Diagram}{15}{subsection.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4}Other Worked Out Examples}{16}{subsection.5.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Uncertainities}{18}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Unstructured Uncertainities}{18}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Parametric Uncertainities}{18}{subsection.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Small-Gain Theorem}{19}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}$H_{\infty }$ Control}{19}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}Optimization Problem and Cost Functions}{20}{subsection.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}$H_{\infty }$ Suboptimal Solutions}{20}{subsection.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3}Calculation of $H_{\infty }$ norm}{20}{subsection.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Conclusion and Future Work}{21}{section.9}

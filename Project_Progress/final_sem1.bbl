@@ -1,0 +1,112 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{book}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhou}{Z.}%
+     {Kemin}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Doyle}{D.}%
+     {John~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glover}{G.}%
+     {Keith}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice Hall}%
+  }
+  \strng{namehash}{ZKDJCGK1}
+  \strng{fullhash}{ZKDJCGK1}
+  \field{title}{Robust and Optimal Control}
+  \list{location}{1}{%
+    {Englewood Cliffs, New Jersey}%
+  }
+  \field{year}{1995}
+\endentry
+
+\entry{aero}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Hyde}{H.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HR1}
+  \strng{fullhash}{HR1}
+  \field{title}{VSTOL first flight on an $H_{\infty}$ control law}
+  \field{year}{1995}
+\endentry
+
+\entry{Gu}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Gu}{G.}%
+     {Da-Wei}{D.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petkov}{P.}%
+     {Petko~H.}{P.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Konstantinov}{K.}%
+     {Mihail~M.}{M.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GDWPPHKMM1}
+  \strng{fullhash}{GDWPPHKMM1}
+  \field{title}{Robust Control Design with MATLAB Second Edition}
+  \list{location}{1}{%
+    {London}%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{parseval}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {London}{L.}%
+     {Imperial~College}{I.~C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LIC1}
+  \strng{fullhash}{LIC1}
+  \field{title}{Parseval's Theorem and it's Proof}
+  \verb{url}
+  \verb http://wwwf.imperial.ac.uk/~jdg/eeft3.pdf
+  \endverb
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
