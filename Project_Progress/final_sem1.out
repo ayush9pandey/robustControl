@@ -4,29 +4,26 @@
 \BOOKMARK [2][-]{subsection.3.1}{Vector Norms and Normed Spaces}{section.3}% 4
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Types of norms}{subsection.3.1}% 5
 \BOOKMARK [2][-]{subsection.3.2}{Banach Spaces}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.3}{Isometric Isomorphism}{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.4}{Inner product and Inner Product Spaces}{section.3}% 8
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Signficance of inner product}{subsection.3.4}% 9
-\BOOKMARK [2][-]{subsection.3.5}{Hilbert Spaces}{section.3}% 10
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Examples}{subsection.3.5}% 11
-\BOOKMARK [2][-]{subsection.3.6}{Orthogonality}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.7}{Hardy Spaces}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.8}{Induced System Gain}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.9}{Induced Matrix Norm}{section.3}% 15
-\BOOKMARK [2][-]{subsection.3.10}{Examples}{section.3}% 16
-\BOOKMARK [1][-]{section.4}{Coprime factorization over RH}{}% 17
-\BOOKMARK [2][-]{subsection.4.1}{Feedback control interpretation of coprime factorization of a transfer matrix}{section.4}% 18
-\BOOKMARK [1][-]{section.5}{Linear Fractional Transformation}{}% 19
-\BOOKMARK [2][-]{subsection.5.1}{Basic Principle}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.2}{Spring Mass Damper System : LFT Configuration}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.3}{Generalized SISO Control System Block Diagram}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.4}{Other Worked Out Examples}{section.5}% 23
-\BOOKMARK [1][-]{section.6}{Uncertainities}{}% 24
-\BOOKMARK [2][-]{subsection.6.1}{Unstructured Uncertainities}{section.6}% 25
-\BOOKMARK [2][-]{subsection.6.2}{Parametric Uncertainities}{section.6}% 26
-\BOOKMARK [1][-]{section.7}{Small-Gain Theorem}{}% 27
-\BOOKMARK [1][-]{section.8}{H Control}{}% 28
-\BOOKMARK [2][-]{subsection.8.1}{Optimization Problem and Cost Functions}{section.8}% 29
-\BOOKMARK [2][-]{subsection.8.2}{H Suboptimal Solutions}{section.8}% 30
-\BOOKMARK [2][-]{subsection.8.3}{Calculation of H norm}{section.8}% 31
-\BOOKMARK [1][-]{section.9}{Conclusion and Future Work}{}% 32
+\BOOKMARK [2][-]{subsection.3.3}{Inner product and Inner Product Spaces}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Signficance of inner product}{subsection.3.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Hilbert Spaces}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Examples}{subsection.3.4}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Orthogonality}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.6}{Hardy Spaces}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.7}{Well Posedness and Internal Stability}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.8}{Coprime factorization over RH}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.9}{Feedback control interpretation of coprime factorization of a transfer matrix}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Linear Fractional Transformation}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Basic Principle}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Spring Mass Damper System : LFT Configuration}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Generalized SISO Control System Block Diagram}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.4}{Other Worked Out Examples}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Uncertainities}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Unstructured Uncertainities}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Parametric Uncertainities}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Small-Gain Theorem}{}% 24
+\BOOKMARK [1][-]{section.7}{H Control}{}% 25
+\BOOKMARK [2][-]{subsection.7.1}{Optimization Problem and Cost Functions}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.2}{H Suboptimal Solutions}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.3}{Calculation of H norm}{section.7}% 28
+\BOOKMARK [1][-]{section.8}{Conclusion and Future Work}{}% 29

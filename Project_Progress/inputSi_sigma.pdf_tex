@@ -1,0 +1,78 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'inputSi_sigma.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{440.8bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.70780399)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{inputSi_sigma.pdf}}%
+    \put(0.12704174,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.15789474,0.04900181){\makebox(0,0)[lb]{\smash{-2}}}%
+    \put(0.27767695,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.30852995,0.04900181){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.43194192,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.46279492,0.04900181){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.58257713,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.61343013,0.04900181){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.73321234,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.76406534,0.04900181){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.88384755,0.03811252){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0.91470054,0.04900181){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{inputSi_sigma.pdf}}%
+    \put(0.10284338,0.06987296){\makebox(0,0)[lb]{\smash{-50}}}%
+    \put(0.10284338,0.16001216){\makebox(0,0)[lb]{\smash{-40}}}%
+    \put(0.10284338,0.25015118){\makebox(0,0)[lb]{\smash{-30}}}%
+    \put(0.10284338,0.34029038){\makebox(0,0)[lb]{\smash{-20}}}%
+    \put(0.10284338,0.43042958){\makebox(0,0)[lb]{\smash{-10}}}%
+    \put(0.12643684,0.5205686){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.11191779,0.6107078){\makebox(0,0)[lb]{\smash{10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{inputSi_sigma.pdf}}%
+    \put(0.20258621,0.63856624){\makebox(0,0)[lb]{\smash{\textbf{Input Sensitivity Function Singular Values}}}}%
+    \put(0.40494555,0.00604955){\makebox(0,0)[lb]{\smash{Frequency (rad/s)}}}%
+    \put(0.08832432,0.20766788){\rotatebox{90}{\makebox(0,0)[lb]{\smash{Singular Values (dB)}}}}%
+  \end{picture}%
+\endgroup%

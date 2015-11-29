@@ -90,22 +90,6 @@
   \field{year}{2012}
 \endentry
 
-\entry{parseval}{online}{}
-  \name{author}{1}{}{%
-    {{}%
-     {London}{L.}%
-     {Imperial~College}{I.~C.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{LIC1}
-  \strng{fullhash}{LIC1}
-  \field{title}{Parseval's Theorem and it's Proof}
-  \verb{url}
-  \verb http://wwwf.imperial.ac.uk/~jdg/eeft3.pdf
-  \endverb
-\endentry
-
 \lossort
 \endlossort
 

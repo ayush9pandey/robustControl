@@ -145,21 +145,23 @@ sorting=none
 {\hypersetup{linkcolor=blue}
 \tableofcontents
 }
+\vskip.9in
+\vskip.9in
 \section{Introduction}
 %\pagenumbering{arabic}
 Robustness of a system is defined by its ability to be insensitive to parameter variations and unwanted exogenous signals. For a control system, these variations could either be plant disturbances and parameter variations within the plant or these could be due to the sensor noises in measurement. Also, at times it is not possible to model the system dynamics accurately. These unmodeled plant dynamics may also affect the system in undersired manner.(See the block diagram in Figure \ref{simple}).
-		\begin{figure}[H]
+\begin{figure}[H]
  
 			  \centering
 			  
-%			  \includesvg[width=1.4\textwidth]{simple}
-			  \def\svgscale{0.3}
-			  \tiny{
-			  \input{simple.pdf_tex}
-			  }
-			  \caption{A control system with plant disturbances and measurement noise}
+			  \includesvg[width=1.0\textwidth]{block2}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Control System Block Diagram\\ \footnotesize n-Sensor Noise, r-Reference Input, y-Outpt, P-Plant, C-Controller, F-Feedback, di-Input Disturbance, do-Output Disturbance, e-Error, u-Control Input}
 			 \label{simple}
-		\end{figure} Hence, the aim of a control engineer is to design a controller in such a way that it deals with these uncertainities. The classical control theories, though, provide good performance for SISO systems but they are, in general, not replicable to multivariable systems. To overcome these
+		\end{figure}	
+	 Hence, the aim of a control engineer is to design a controller in such a way that it deals with these uncertainities. The classical control theories, though, provide good performance for SISO systems but they are, in general, not replicable to multivariable systems. To overcome these
 difficulties and to achieve a robust performance in MIMO systems several successful design methods have been developed in the past three decades. Among them, the $H_{\infty}$ control is a popular and effective robust control design technique.  \\
 The theory of robust control was first proposed in the late 1970s and early 1980s and since then there has been a huge effort in various methods to achieve specified performance of a system robustly. The most widespread and important of these methods is the $H_{\infty}$ loop-shaping technique which was proposed by McFarlane and Glover of Cambridge University. The $H_{\infty}$ loop-shaping technique combines classical loop-shaping concepts with the $H_{\infty}$ controller design techniques.  \\
 For application of a robust controller to a particular application the constraints of the system need to be modeled as well and the controller design has to be changed accordingly. This project aims to study in detail the $H_{\infty}$ loop-shaping robust controller design technique and then model a mobile robot system in such a way that a robust controller for the mobile robot's locomotion is designed. Some challenges that might be faced in this process are those concerning the complexity of the very theory of  $H_{\infty}$	 loop-shaping technique. Moreover, designing the controller for a mobile robot would be faced with many challenges with respect to actuator saturation and other modeling constraints.\\
@@ -173,42 +175,38 @@ The motivation for this project comes from the fact that usually great amount of
 
 As explained in Section \ref{bg}, the robust controller design revloves around solving an optimization problem and hence it is obvious that various mathematical techniques need to be learnt and applied to successfully be able to learn the theory of $H_{\infty}$ control technique. The following subsections go over the basics required as prerequisites for all the study on robust control that shall follow. The mathematical tools and concepts given in this section have been limited to an introduction only and proper references are given for the readers who wish to dwelve more into a particular concept. 
 	\subsection{Vector Norms and Normed Spaces}
-	In linear algebra, norm is a function that is defined for a vector which gives a positive scalar quantity representing the vector's size. It can be understood as an analogy to the absolute value function that we have for scalar quantities. A vector space for which  a particular norm is defined is known as a normed space. Various kinds of norms are defined in the following section.
+	In linear algebra, norm is a function that is defined for a vector which gives a positive scalar quantity representing the vector's size. It can be understood as an analogy to the absolute value function that we have for scalar quantities. A vector space for which  a particular norm is defined is known as a normed space. 
 		\subsubsection{Types of norms}
-			\paragraph{p-Norm} The p-norm is the most commonly used form of norm used in linear algebra. For a vector x$\in \mathbb{R}$, the p-norm is given by
+			\paragraph{p-Norm}  The p-norm is the most commonly used form of norm used in linear algebra. For a vector x$\in \mathbb{R}$, the p-norm is given by
 				\begin{equation}
 					\norm{x}_{p} := \left(\sum\limits_{i=1}^n  (x_{i})^{p}\right)^{\frac{1}{p}}
 				\end{equation}
 				p can take any value in [1,$\infty$) which would give different norms such as the 2-norm and so on. The two norm is also known as the Euclidean norm or the energy norm.
-			\paragraph{Supremum Norm} For a subset S of a partially ordered set T, having elements ${x_{1},x_{2},..}$ where $x_{i}\:\in \:\mathbb{C}$. The supremum (the least upper bound) for this set is given by the least element more than or equal to all elements of S. It may or may not exist. Without the loss of generality, we define the supremum norm here on the complex space $\mathbb{C}$. Let F be the space of all bounded complex-valued continuous functions defined on $\mathbb{C}$. The supremum norm is the norm defined on F by,
-			\begin{equation}
-				\norm{f}_{\infty}=\sup_{x\: \in \:\mathbb{C}} |f(x)|
-			\end{equation}
-		
+				
 	\subsection{Banach Spaces}
 	A complete normed space is called a Banach Space. For a norm space to be complete, the following two properties should be satisfied for any vector $x, x_{n}$ and $x_{m}$ in the general vector space $V$.
 		\begin{enumerate}
 			\item Convergence Property : When $\norm{(x_{n} -x)}\rightarrow 0$, then $x_{n} \rightarrow x$.
 			\item Cauchy Sequence Property: For $n$ and $m \rightarrow \infty$, $\norm{x_{n}-x_{m}} < \epsilon$, for small $\epsilon > 0$. 		\end{enumerate}
-	
-	\subsection{Isometric Isomorphism}
-	An operator T from a vector space $V_{1}$ to $V_{2}$ takes $x_{1} \:\in\: V_{1}$ to a value $Tx_{1} \:\in \:V_{2}$. This operator is called an isometric isomorphism when the norm of $Tx_{1}$ is same as the norm of the initial value in vector space $V_{1}$. It can be formulated as follows:
-		\begin{equation}
-			\norm{Tx_{1}} = \norm{x_{1}}
-			\label{iso}
-		\end{equation}
-	A straight and simple example for an operator which performs isometric isomorphism is a Laplace or Fourier transform. The eq.\ref{iso} follows for these transformation operators from the Parseval's Theorem \cite{parseval}.
+%	
+%	\subsection{Isometric Isomorphism}
+%	An operator T from a vector space $V_{1}$ to $V_{2}$ takes $x_{1} \:\in\: V_{1}$ to a value $Tx_{1} \:\in \:V_{2}$. This operator is called an isometric isomorphism when the norm of $Tx_{1}$ is same as the norm of the initial value in vector space $V_{1}$. It can be formulated as follows:
+%		\begin{equation*}
+%			\norm{Tx_{1}} = \norm{x_{1}}
+%			\label{iso}
+%		\end{equation*}
+%	A straight and simple example for an operator which performs isometric isomorphism is a Laplace or Fourier transform. The eq.(\ref{iso}) follows for these transformation operators from the Parseval's Theorem \cite{parseval}.
 	\subsection{Inner product and Inner Product Spaces} The inner product between two vectors $x$ and $y$ is denoted by $\left\langle x, y \right\rangle$ and is given by $x^{*}y$ where the * operator is the adjoint operator which can be calculated by taking the transpose and then the conjugate of the complex vector.
-		\begin{equation}
+		\begin{equation*}
 			\left\langle x, y \right\rangle = x^{*}y = \sum\limits_{i=1}^n (\bar{x_{i}}y_{i})
 			\label{in}
-		\end{equation}
+		\end{equation*}
 		
 		If for a vector space $V$, the inner product is defined in the manner as in eq. \ref{in} and it exists. Then the vector space V is called an inner product space.
 		\subsubsection{Signficance of inner product}
 			The inner product operation gives a scalar output related to the two vectors. This scalar is significant in vector and geometrical analysis in many ways. The inner product is used to determine the length of a vector, angle between two vectors and it is also used to define the important property of orthogonality. The following equations have been mentioned without proof to summarize the results:
 			
-			\begin{align}
+			\begin{align*}
 				\intertext{For length of the vector,}
 				\left\langle x, x \right\rangle &= \norm{x}^{2} \\
 				\intertext{Angle between two vectors x and y can be given as}
@@ -217,22 +215,18 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 				\theta &= \frac{\pi}{2} \\
 				\intertext{that is, }
 				\left\langle x, y \right\rangle &= 0 
-			\end{align}
+			\end{align*}
 			
 	\subsection{Hilbert Spaces}
-	A Hilbert space is a vector space which is
-		\begin{enumerate}
-			\item Complete normed space
-			\item Inner product space
-		\end{enumerate}
-	As is obvious then that any Hilbert Space will always be a Banach Space as Hilbert Spaces would be subspaces of their corresponding Banach Spaces.
+	A Hilbert space is a vector space which is a complete inner product space with the norm induced by its inner product.
+
 		\subsubsection{Examples} There can be many common examples for a Hilbert Space. Some of them are
 			\begin{enumerate}
-				\item The space $\mathbb{C}^{n}$, with the usual inner product defined is a finite dimensional Hilbert Space.
-				\item The space $\mathbb{C}^{n\:\times\:m}$ of matrix valued functions is a Hilbert Space with the inner product defined as:
-					\begin{equation}
+				\item The space $\mathbb{R}^{n}$, with the usual inner product defined is a finite dimensional Hilbert Space.
+				\item The space $\mathbb{R}^{n\:\times\:m}$ of matrix valued functions is a Hilbert Space with the inner product defined as:
+					\begin{equation*}
 						\left\langle A, B \right\rangle := Trace A^{*}B = \sum\limits_{i=1}^n \sum\limits_{j=1}^m \bar{a_{ij}}b_{ij} \:\:\:\: \forall A,B \:\in \:\mathbb{C}^{n \times m}
-					\end{equation}
+					\end{equation*}
 				\item $l_{2}(-\infty,\infty)$ is an infinite dimensional Hilbert Space which consists of sequences ${....,x_{-2},x_{-1},x_{0},x_{1},...}$ (real or complex) which are square summable. The inner product is given by:
 					\begin{align*}
 						\left\langle x, y \right\rangle &:= \sum\limits_{i=-\infty}^\infty \bar{x_{i}}y_{i}\\
@@ -240,15 +234,13 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 						\left\langle x, y \right\rangle &:= \sum\limits_{i=-\infty}^\infty Trace \: (x_{i}^{*}y_{i})\\						
 					\end{align*}
 				\item Subspaces of $l_{2}$ viz. $l_{2}[0,\infty],l_{2}(-\infty,0]$ are defined similarly.
-				\item The space of matrix valued functions on $\mathbb{R}$ which are square integrable and Lebesgue measurable is denoted by $\mathbb{L}_{2}(I)$ for $I \subset \mathbb{R}$. The inner product is given by:
-				\begin{align*}
-						\left\langle f, g \right\rangle &:= \int\limits_{I}f(t)^*g(t)dt\\
-						\intertext{If the functions are vector or matrix valued, then the inner product shall be given by}
-						\left\langle f, g \right\rangle &:= \int\limits_{I} Trace \: [f(t)^{*}g(t)]dt\\						
-					\end{align*}
-				\item Again on similar lines, $\mathbb{L}_{2+}(I)$ and $\mathbb{L}_{2-}(I)$ will be defined, where\\ $\mathbb{L}_{2+} = \mathbb{L}_{2}[0,\infty)$ is a subspace of $\mathbb{L}_{2}(\infty,\infty)$ and \\
-		$\mathbb{L}_{2-} = \mathbb{L}_{2}(-\infty,0]$ is a subspace of $\mathbb{L}_{2}(\infty,\infty)$.
-		
+%				\item The space of matrix valued functions on $\mathbb{R}$ which are square integrable and Lebesgue measurable is denoted by $\mathbb{L}_{2}(I)$ for $I \subset \mathbb{R}$. The inner product is given by:
+%				\begin{align*}
+%						\left\langle f, g \right\rangle &:= \int\limits_{I}f(t)^*g(t)dt\\
+%						\intertext{If the functions are vector or matrix valued, then the inner product shall be given by}
+%						\left\langle f, g \right\rangle &:= \int\limits_{I} Trace \: [f(t)^{*}g(t)]dt\\						
+%					\end{align*}
+					
 			\end{enumerate}
 	\subsection{Orthogonality}
 	The $\mathbb{L}_{2+}$ space has all matrix or vector valued functions which are zero for $t<0$ and $\mathbb{L}_{2-}$ has all the functions with $t>0$ equal to zero. This implies that inner product between any two functions, one from $\mathbb{L}_{2+}$ and other from $\mathbb{L}_{2-}$ will always be equal to zero. Hence, the subspaces $\mathbb{L}_{2+}$ and $\mathbb{L}_{2-}$ are orthogonal to each other. It is also easy to see from here that $\mathbb{L}_{2}$ is actually an orthogonal direct sum of it's subspaces $\mathbb{L}_{2+}$ and $\mathbb{L}_{2-}$.
@@ -263,58 +255,57 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 		\end{align}
 		Now, if for a given transfer matrix F (real, rational, strictly proper), if there are no poles on the $j\omega$ axis, then we have a subspace of $\mathbb{L}_{2}$ space known as $\mathbb{RL}_{2}$.
 		 
-		\paragraph{Hardy Spaces} \label{hinfnorm} are subspaces of $\mathbb{L}_{2}(j\mathbb{R})$ space but with an additional property of analyticity of the functions. Formally, all matrix valued functions analytic in $Re(s)\: > \:0$ form the $\mathbb{H}_{2}$ space. The inner product can be shown to be equal to the one shown in eq. \ref{inner}. On similar lines as to  $\mathbb{RL}_{2}$, we define  $\mathbb{RH}_{2}$ which is a subspace of $\mathbb{H}_{2}$. The $\mathbb{RH}_{2}$ consists of all real rational and stable (all poles in LHP) transfer matrices. This is because if there were poles in the RHP then the functions would not be analytic anymore.\\ To summarize,
-		\begin{align*}
-		 	\mathbb{L}_{2}(-\infty,\infty) &= \mathbb{L}_{2}(j\mathbb{R}) \\
-		 	\mathbb{L}_{2}(-\infty,0] &= \mathbb{H}_{2}^{\perp} \\
-		 	\mathbb{L}_{2}[0,\infty) &= \mathbb{H}_{2}
-		 \end{align*}
+		\paragraph{Hardy Spaces} \label{hinfnorm} are subspaces of $\mathbb{L}_{2}(j\mathbb{R})$ space but with an additional property of analyticity of the functions. Formally, all matrix valued functions analytic in $Re(s)\: > \:0$ form the $\mathbb{H}_{2}$ space. The inner product can be shown to be equal to the one shown in eq. \ref{inner}. On similar lines as to  $\mathbb{RL}_{2}$, we define  $\mathbb{RH}_{2}$ which is a subspace of $\mathbb{H}_{2}$. The $\mathbb{RH}_{2}$ consists of all real rational and stable (all poles in LHP) transfer matrices. This is because if there were poles in the RHP then the functions would not be analytic anymore.\\
 		 The space $\mathbb{H}_{2}^{\perp}$ is the subspace of $\mathbb{L}_{2}$ having analytic functions in LHP, which implies  $\mathbb{RH}_{2}^{\perp}$ would contain all proper rational transfer matrices having all poles in the RHP.
-		\\Next, we have  $\mathbb{H}_{\infty}$ spaces. The above definitions follow in the same way for $\mathbb{L}_{\infty}(j\mathbb{R})$ , $\mathbb{H}_{\infty}$ and $\mathbb{H}_{\infty}^{-}$ spaces and the $\mathbb{RL}_{\infty}$, $\mathbb{RH}_{\infty}$, $\mathbb{RH}_{\infty}^{-}$ subspaces respectively except that now the norm is not the two norm (obviously) but is the supremum norm. The norms are given by the following set of equations,
-		\begin{align}
+		\\Next, we have  $\mathbb{H}_{\infty}$ spaces. The above definitions follow in the same way for $\mathbb{L}_{\infty}(j\mathbb{R})$ , $\mathbb{H}_{\infty}$ and $\mathbb{H}_{\infty}^{-}$ spaces and the $\mathbb{RL}_{\infty}$, $\mathbb{RH}_{\infty}$, $\mathbb{RH}_{\infty}^{-}$ subspaces respectively except that now the norms are given by the following set of equations,
+		\begin{align*}
 		\intertext{For $\mathbb{L}_{\infty}(j\mathbb{R})$ space}
 		\norm{F}_{\infty} &:= ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)] \\
 		\intertext{For $\mathbb{H}_{\infty}$ space}
 		\norm{F}_{\infty} &:= \sup_{Re(s) > 0} \: \bar{\sigma} [F(s)] = ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)] \\
 		\intertext{The second equality can be regarded as the generalization of maximum modulus theorem for matrix functions. Now for $\mathbb{H}_{\infty}^{-}$ space}
 		\norm{F}_{\infty} &:= \sup_{Re(s) < 0} \: \bar{\sigma} [F(s)] = ess \sup_{\omega\:\in\:\mathbb{R}} \: \bar{\sigma} [F(j\omega)]
-		\end{align}
+		\end{align*}
 		where $\bar{\sigma}$ is equal to maximum singular value of the matrix, where a singular value of a matrix T is given by $\sqrt{\lambda_{i}(T^{*}T)}$ for ith eigen value of the matrix.
 
-\subsection{Induced System Gain} The most important aspect of a control system is to achieve a certain performance specification and hence the controller design should always look into the performance specifications and it's effects on various parameters. Usually, size of different signals is used to specify the performance in a better way. This is where the study shown in previous section comes in handy.
-	\subsection{Induced Matrix Norm} 
-	\begin{figure}[H]
- 
-			  \centering
-			  
-%			  \includesvg[width=1.4\textwidth]{performance_specs_block_diag}
-			  \def\svgscale{0.3}
-			  \tiny{
-			  \input{performance_specs_block_diag.pdf_tex}
-			  }
-			  \caption{Performance Specifications using Induced System Gain}
-			 \label{perf}
-		\end{figure}
-	For a system (as shown in figure \ref{perf}) with transfer matrix operator G, input u and output z having q-inputs and p-outputs, the G-induced norm is of particular importance as will be illustrated in this section. Here, $ G \:\in\: \mathbb{R}\mathbb{H}_{\infty} $ and G(s) is strictly proper transfer matrix, i.e. $G(\infty) = 0 $.
-	The system can be represented as \\
-	\begin{center}
-		$G : u \rightarrow z$
-	\end{center}
-	For this Multi Input Multi Output (MIMO) system, let $u_{0} \: \in \: \mathbb{R}^{q} $ be the input direction and similarly for the output. The operator norm, i.e. the G-induced norm will give a measure of the output for given input u. As illustrated in the examples below, this norm plays a very important role in performance specifications because the size of the output signal in time domain can be calculated in terms of the frequency domain norm of the transfer matrix and the input direction. 
-	\subsection{Examples}
-	For impulse function input signal with $u_{0}$ as the input direction, the output is given as $z=g*u$ where the * operator denotes the convolution. 
-	\begin{align*}
-		z(t) &= \int\limits_{0}^t g(t-\tau)u(\tau)d\tau\\
-		z(t) &= \int\limits_{0}^t g(t-\tau)u_{0}\delta(\tau)d\tau\\
-		z(t) &= g(t)u_{0}\\
-		\intertext{Now, taking norm we have,}
-		\norm{z}_{2} &= \norm{gu_{0}}_{2}\\
-		\norm{z}_{\infty} &= \norm{gu_{0}}_{\infty}\\
-		\intertext{Using Parseval's Relation, we have}
-		\norm{gu_{0}}_{2} &= \norm{Gu_{0}}_{2}\\
-	\end{align*}
-	As is clear from the above derivation, that time domain "size of signal" can be expressed in terms of the frequency domain norm. The operator induced norm, i.e. the G induced norm here gives the size of change that "G" produces in the input to give out the output. Hence, this specification is important and helpful in controller design.
-	\section{Coprime factorization over $\mathbb{RH_{\infty}}$} For a SISO linear system whose transfer function is given $b(s)/a(s)$, $b(s)$ and $a(s)$ are said to be coprime if they do not have any common zeros. Such a representation of the system is often referred to as the minimal realization of the system. For SISO systems, it is always possible to write a transfer function as a ratio of two stable transfer function with no common divisors (i.e. their greatest common divisor (gcd) is 1). This is called coprime factorization of the transfer function as the two factored transfer functions have no common divisors. Mathematically, using Euclid's algorithm we can write transfer functions X(s) and Y(s) in $\mathbb{RH_{\infty}}$ such that for a given transfer function G(s), transfer fucntions M(s) and N(s) in $\mathbb{RH_{\infty}}$ are it's coprime factors such that:
+%\subsection{Induced System Gain} The most important aspect of a control system is to achieve a certain performance specification and hence the controller design should always look into the performance specifications and it's effects on various parameters. Usually, size of different signals is used to specify the performance in a better way. This is where the study shown in previous section comes in handy.
+%	\subsection{Induced Matrix Norm} 
+%	\begin{figure}[H]
+% 
+%			  \centering
+%			  
+%%			  \includesvg[width=1.4\textwidth]{performance_specs_block_diag}
+%			  \def\svgscale{0.3}
+%			  \tiny{
+%			  \input{performance_specs_block_diag.pdf_tex}
+%			  }
+%			  \caption{Performance Specifications using Induced System Gain}
+%			 \label{perf}
+%		\end{figure}
+%	For a system (as shown in figure \ref{perf}) with transfer matrix operator $G$, input $u$ and output $z$ having $q$-inputs and $p$-outputs, the $G$-induced norm is of particular importance as will be illustrated in this section. Here, $ G \:\in\: \mathbb{R}\mathbb{H}_{\infty} $ and G(s) is strictly proper transfer matrix, i.e. $G(\infty) = 0 $.
+%	The system can be represented as \\
+%	\begin{center}
+%		$G : u \rightarrow z$
+%	\end{center}
+%	For this Multi Input Multi Output (MIMO) system, let $u_{0} \: \in \: \mathbb{R}^{q} $ be the input direction and similarly for the output. The operator norm, i.e. the G-induced norm will give a measure of the output for given input $u$. As illustrated in the examples below, this norm plays a very important role in performance specifications because the size of the output signal in time domain can be calculated in terms of the frequency domain norm of the transfer matrix and the input direction. 
+%	\subsection{Examples}
+%	For impulse function input signal with $u_{0}$ as the input direction, the output is given as $z=g*u$ where the * operator denotes the convolution. 
+%	\begin{align*}
+%		z(t) &= \int\limits_{0}^t g(t-\tau)u(\tau)d\tau\\
+%		z(t) &= \int\limits_{0}^t g(t-\tau)u_{0}\delta(\tau)d\tau\\
+%		z(t) &= g(t)u_{0}\\
+%		\intertext{Now, taking norm we have,}
+%		\norm{z}_{2} &= \norm{gu_{0}}_{2}\\
+%		\norm{z}_{\infty} &= \norm{gu_{0}}_{\infty}\\
+%		\intertext{Using Parseval's Relation, we have}
+%		\norm{gu_{0}}_{2} &= \norm{Gu_{0}}_{2}\\
+%	\end{align*}
+%	As is clear from the above derivation, that time domain "size of signal" can be expressed in terms of the frequency domain norm. The operator induced norm, i.e. the G induced norm here gives the size of change that "G" produces in the input to give out the output. Hence, this specification is important and helpful in controller design.
+		\subsection{Well Posedness and Internal Stability}
+		A feedback system is said to be well posed if all closed-loop transfer function matrices are well-defined and proper. \\
+		For a linear time invariant system given by a transfer function $G(s)$, stability of the system is assured if and only if all poles of the the transfer function lie in the open left half complex plane. This is also often referred to as the BIBO stability condition, i.e. when the input is bounded the output will be bounded. For a system described by state space representation, the concept of asymptotic stability is defined. A system is asymptotically stable if, for an identically zero input, the system states will converge to zero from any initial states. Hence, an interconnected system is internally
+stable if the subsystems of all input–output pairs are asymptotically stable.
+	\subsection{Coprime factorization over $\mathbb{RH_{\infty}}$} For a SISO linear system whose transfer function is given $b(s)/a(s)$, $b(s)$ and $a(s)$ are said to be coprime if they do not have any common zeros. Such a representation of the system is often referred to as the minimal realization of the system. For SISO systems, it is always possible to write a transfer function as a ratio of two stable transfer function with no common divisors (i.e. their greatest common divisor (gcd) is 1). This is called coprime factorization of the transfer function as the two factored transfer functions have no common divisors. Mathematically, using Euclid's algorithm we can write transfer functions X(s) and Y(s) in $\mathbb{RH_{\infty}}$ such that for a given transfer function G(s), transfer fucntions M(s) and N(s) in $\mathbb{RH_{\infty}}$ are it's coprime factors such that:
 	\begin{align}
 		&G(s) = N(s)M(s)^{-1}\\
 		\intertext{where X and Y exists such that}
@@ -348,7 +339,29 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 		\section{Linear Fractional Transformation} 
 		%write about exogenous signal etc vectors%
 		Linear Fractional Transformation or LFT is a unified theory of transfer function and state space representations including uncertainity. All $H_{\infty}$ control problems use LFT representation of systems. An LFT representation could be of two types, upper and lower LFTs. Both of these structures are shown in the Figures (\ref{llft}) and (\ref{ulft}).
-			\\
+			\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.6\textwidth]{llft}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{llft.pdf_tex}}
+			  \caption{Lower LFT Structure}
+			 \label{llft}
+		\end{figure}
+			\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.6\textwidth]{ulft}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Upper LFT Structure}
+			 \label{ulft}
+		\end{figure}
+		
 			For the lower LFT structure from Figure(\ref{llft}) the transfer matrix from $w$ to $z$ is denoted by $\mathscr{F}_{l}(G,K)$. Now for this structure since we have,
 		
 				\[
@@ -375,27 +388,73 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 				\end{enumerate}
 			
 		\subsection{Basic Principle} LFT framework is widely used for $H_{\infty}$ control because it provides a general representation for all kinds of systems and systems with different uncertainities as well. This is one of the reasons why LFT forms the basic working framework for robust controller synthesis and analysis. The uncertainities in a system  in an LFT framework are separated out and the resulting framework, called as an M-$\Delta$ structure consists of the nominal plant M (without any uncertainities) and $\Delta$ matrix has all uncertain parameters. A closed loop system with uncertainities can hence be reduced in LFT framework as shown in Figure \ref{cllft}. 
+		\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.6\textwidth]{cllft}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Closed Loop System in LFT Structure}
+			 \label{cllft}
+		\end{figure}
 		%write about closed loop with uncertainity and also the final equation%		
 		The input output relation for the system can easily be worked out by considering the upper and lower LFT structures in the given system. \\For any given system, to reduce in this M-$\Delta$ format, all uncertain parameters need to be \say{pulled out} of the given plant. This can be achieved after drawing the block diagram of the system such that all uncertain parameters are individual  blocks in the block diagram. This technique is illustrated in detail in the following example of a spring mass damper system. 
-			\subsection{Spring Mass Damper System : LFT Configuration} The Figure(\ref{smd}) shows a simple spring mass damper system with force F being applied in the vertically up direction. The system parameters m (mass of the block), c (the damping constant) and k (spring constant) are uncertain parameters with given upper and lower bound on uncertainities. The equation of motion is given by :
+			\subsection{Spring Mass Damper System : LFT Configuration} The Figure(\ref{smd}) shows a simple spring mass damper system with external force F being applied on the mass.
+			\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.6\textwidth]{smd_1}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Spring Mass Damper System}
+			 \label{smd}
+		\end{figure} The system parameters m (mass of the block), c (the damping constant) and k (spring constant) are uncertain parameters with given upper and lower bound on uncertainities. The equation of motion is given by :
 				\begin{equation}
 					\ddot{x} + \frac{c}{m}\dot{x}+\frac{k}{m}x = \frac{F}{m}
 				\end{equation}
-				A block diagram with two integrators and parametric uncertainities can be easily drawn from the above equation using the uncertainity values within $10\%$ of mass $\tilde{m}$, within $20\%$ of $\tilde{c}$ and within $30\%$ for $\tilde{k}$. The corresponding uncertain parameters are given by $\delta_{m},\delta_{c}$ and $\delta_{k}$ respectively. Note here that $\tilde{x}$ represents the nominal value of the parameter, where $x$ is the uncertain parameter. The three uncertain parameters now need to be represented in LFT framework and for that we need to separate out the $\Delta$s. To achieve this, we first evaluate the $\frac{1}{m}$ block in the given block diagram. The $\frac{1}{\tilde{m}}$ block can be represented as LFT by the following manipulation:
+				A block diagram with two integrators and parametric uncertainities can be easily drawn, as shown in Figure(\ref{smd2}), from the above equation using the uncertainity values within $10\%$ of mass $\tilde{m}$, within $20\%$ of $\tilde{c}$ and within $30\%$ for $\tilde{k}$. The corresponding uncertain parameters are given by $\delta_{m},\delta_{c}$ and $\delta_{k}$ respectively. Note here that $\tilde{x}$ represents the nominal value of the parameter, where $x$ is the uncertain parameter. 
+
+			\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{smd2}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Spring Mass Damper Block Diagram with Uncertainities}
+			 \label{smd2}
+		\end{figure}				
+				The three uncertain parameters now need to be represented in LFT framework and for that we need to separate out the $\Delta$s. To achieve this, we first evaluate the $\frac{1}{m}$ block in the given block diagram. The $\frac{1}{\tilde{m}}$ block can be represented as LFT by the following manipulation:
 				\begin{align}
 					\frac{1}{m} &= \frac{1}{\tilde{m}(1+0.1\delta_{m})}\\
 					\intertext{on evaluating, we get}
 					\frac{1}{m} &= \frac{1}{\tilde{m}} - \frac{0.1\delta_{m}}{\tilde{m}}. (1+0.1\delta_{m})^{-1}
 				\end{align}
-				The above equation can be represented in lower LFT framework as shown in the Figure(\ref{masslft}). The nominal plant $M$ is given by $\mathscr{F}_{l}(M,\Delta_{m})$ and $\Delta = \delta_{m}$.
+				The above equation can be represented in lower LFT framework where, the nominal plant $M$ is given by $\mathscr{F}_{l}(M,\Delta_{m})$ and $\Delta = \delta_{m}$.
 				\[M=
 				\begin{bmatrix}
 					\frac{1}{\tilde{m}} & \frac{-0.1}{\tilde{m}} \\
 					1 & -0.1
 				\end{bmatrix}
-				\].
+				\]
 				
-				Next, to separate out $\delta_{c}$ and $\delta_{k}$, simple block diagram manipulations lead us to the following block diagram shown in Figure(\ref{delta_out_smd}). Now, we can mark the inputs and outputs to these $\delta$s appropiately. $y$ is the input to the delta and $u$ is its output. Using these inputs and outputs to $\delta$s along with exogenous input vector and the objective signal vector we can represent the whole spring mass damper system into M-$\Delta$ structure. The values of $M$ and $\Delta$ can be found out by actually writing out the state space representation using the block diagram. For this system the exogenous signal vector can be chosen to comprise of $F$, $x_{1}$ and $x_{2}$ and the objective signal vector as $\dot{x_{2}}$ and $\dot{x_{1}}$, where $x_{1}$ and $x_{2}$ are the states of the system. The final M-$\Delta$ structure in LFT form is given as follows:
+				Next, to separate out $\delta_{c}$ and $\delta_{k}$, simple block diagram manipulations lead us to the following block diagram shown in Figure(\ref{smd3}).
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{smd3}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Spring Mass Damper Block Diagram with Uncertainities Pulled Out}
+			 \label{smd3}
+		\end{figure}	 Now, we can mark the inputs and outputs to these $\delta$s appropiately. $y$ is the input to the delta and $u$ is its output. Using these inputs and outputs to $\delta$s along with exogenous input vector and the objective signal vector we can represent the whole spring mass damper system into M-$\Delta$ structure. The values of $M$ and $\Delta$ can be found out by actually writing out the state space representation using the block diagram. For this system the exogenous signal vector can be chosen to comprise of $F$, $x_{1}$ and $x_{2}$ and the objective signal vector as $\dot{x_{2}}$ and $\dot{x_{1}}$, where $x_{1}$ and $x_{2}$ are the states of the system. The final M-$\Delta$ structure in LFT form is given as follows:
 			\[
 			\begin{bmatrix}
 				\dot{x}_{1}\\
@@ -511,7 +570,19 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 %				\end{bmatrix}
 %				\]
 %				Here $\Delta=\delta$ and dim($\Delta$)=1.
-			\subsection{Generalized SISO Control System Block Diagram} A simple SISO system consisting of a reference signal, controller, disturbance and a plant. The block diagram is shown in Figure (\ref{simple_siso}). The exogenous signal vector ($w$) for this system will have $r$ and $d$ as its elements. The objective signal (if good tracking of reference is desired) can be chosen as $e$. The input to the controller C is equal to $e$, hence $y=e$. The control input in this case is given as $u$. Now, we can write the transfer function matrix form of the system in LFT framework. 
+			\subsection{Generalized SISO Control System Block Diagram} A simple SISO system consisting of a reference signal, controller, disturbance and a plant. The block diagram is shown in Figure (\ref{simple_siso}).
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{block11}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{A SISO Control System Block Diagram}
+			 \label{simple_siso}
+		\end{figure}
+			 The exogenous signal vector ($w$) for this system will have $r$ and $d$ as its elements. The objective signal (if good tracking of reference is desired) can be chosen as $e$. The input to the controller C is equal to $e$, hence $y=e$. The control input in this case is given as $u$. Now, we can write the transfer function matrix form of the system in LFT framework. 
 				\begin{align}
 					e&=r-y\\
 					e&=r-Pd-Pu
@@ -618,7 +689,19 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 				\]
 										
 			\subsection{Other Worked Out Examples} Since LFT plays such an important role in $H_{\infty}$ control design and analysis, some more examples were worked out as a part of this project. The following examples deal with different situations such as presence of sensor noise in measurement in a SISO control system, presence of exogenous output and input disturbances in the system simultaneously along with sensor noise (this is the most general case for SISO systems) and assigning weights to objective signals in multivariable systems (in presence of disturbance and nosie signals). 
-			\\The block diagram shown in Figure (\ref{example1}) can be reduced in LFT framework in both state space and transfer function forms. The exogenous input signal vector ($w$) for this case is given by:
+			\\The block diagram shown in Figure (\ref{example1}) can be reduced in LFT framework in both state space and transfer function forms.
+	\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{block2}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{A SISO Control System Block Diagram with Noise and Disturbances}
+			 \label{example1}
+		\end{figure}			 
+			 The exogenous input signal vector ($w$) for this case is given by:
 			\[w=
 			\begin{bmatrix}
 			r \\ d_{i} \\ d_{o} \\ n
@@ -721,7 +804,19 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 				\end{bmatrix}	
 				\]
 				\\
-				As one last example, we take a multivariable system with weights $W_{1}$ and $W_{2}$ assigned to the control input and the objective signal vectors. These weights help in better formulation of cost function in the $H_{\infty}$ optimization problem. Assigning weight to control input $u$ helps is achieving the performance criteria of having less control energy along with achieving the required performance by assigning weight to the objective signal. The block diagram for the system is shown in Figure(\ref{example2}). The objective signal vector here will have both $u_{f}$ and $v$ (See that $u_{f}=W_{1}u$, where u is the control input signal). Other vectors are chosen in similar fashion as previous systems. The final transfer function LFT structure of the given system is given as follows:
+				As one last example, we take a multivariable system with weights $W_{1}$ and $W_{2}$ assigned to the control input and the objective signal vectors. These weights help in better formulation of cost function in the $H_{\infty}$ optimization problem. Assigning weight to control input $u$ helps is achieving the performance criteria of having less control energy along with achieving the required performance by assigning weight to the objective signal. The block diagram for the system is shown in Figure(\ref{example2}).
+				
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{block3}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{A MIMO Control System Block Diagram with Weights Assigned}
+			 \label{example2}
+		\end{figure}		 The objective signal vector here will have both $u_{f}$ and $v$ (See that $u_{f}=W_{1}u$, where u is the control input signal). Other vectors are chosen in similar fashion as previous systems. 
 				\[
 				\begin{bmatrix}
 					v \\ u_{f} \\ \hline y
@@ -747,9 +842,134 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 		\end{enumerate}
 		At the moment, the structured uncertainities are out of scope of this project and hence the other two kinds of uncertainities were studied and are briefly described below: 
 			\subsection{Unstructured Uncertainities} Many dynamic perturbations occuring throughout the system may be lumped into one single block, $\Delta$. This is referred to as unstructured uncertainity. To model these uncertainities in a system either transfer function matrix approach or LFT framework could be used. Some examples of unstructured uncertainities are additive uncertainity, multiplicative uncertainity etc. These and many others have been elaborately presented in \cite{book} and \cite{Gu}.\\
-			For a system with unstructured uncertainities simulation was performed in MATLAB using the Robust Control Toolbox. The Figures (\ref{ipop1}),(\ref{ipop2}) show the transient response of the system chosen due to output and input disturbances. Also, the Figures (\ref{sens1}),(\ref{sens2}) show the singular value plots of sensitivity and complimentary sensitivity functions plotted using MATLAB. Along with this, many other simulations were done for different systems as well.
+			For a system with unstructured uncertainities simulation was performed in MATLAB using the Robust Control Toolbox. The system shown in Figure (\ref{example1}), with $G(s)$ and $C(s)$ transfer function matrices as follows, was chosen. The feedback transfer function matrix $H(s) =1$. 
+			\[
+			G(s)=
+			\begin{bmatrix}
+			\frac{1}{s+1} & \frac{0.5s+0.2}{(s+0.3)(s+1)} \\
+			\frac{-0.7}{0.2s+1} & \frac{1}{s+0.3}
+			\end{bmatrix}
+			K(s)=
+			\begin{bmatrix}
+			\frac{7(s+1)}{0.3s+1} & 0 \\
+			0 & \frac{18(s+2)}{s+1}
+			\end{bmatrix}
+			\]
+			
+			The Figures (\ref{r1y1}), (\ref{r2y1}),(\ref{r1y2}),(\ref{r2y2}) show the transient responses of the two input two output system. 
+					\begin{figure}[H]
+\centering
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=1\linewidth]{ref1_out1}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{ref1_out1.pdf_tex}}
+  \captionof{figure}{Ref1 to Out1}
+  \label{r1y1}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=1\linewidth]{ref2_out1}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{ref2_out1.pdf_tex}}
+  \captionof{figure}{Ref2 to Out1}
+  \label{r2y1}
+\end{minipage}
+\end{figure}
+					\begin{figure}[H]
+\centering
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=0.6\linewidth]{ref1_out2}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{ref1_out2.pdf_tex}}
+  \captionof{figure}{Ref1 to Out2}
+  \label{r1y2}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=0.6\linewidth]{ref2_out2}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{ref2_out2.pdf_tex}}
+  \captionof{figure}{Ref2 to Out2}
+  \label{r2y2}
+\end{minipage}
+\end{figure}
+			Also, the Figures (\ref{si}),(\ref{so}), (\ref{ti}), (\ref{to}) show the singular value plots of input and output sensitivity and complimentary sensitivity functions plotted using MATLAB. Along with this, many other simulations were done such as responses to disturbance signal etc.
+								\begin{figure}[H]
+\centering
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=1\linewidth]{inputSi_sigma}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{inputSi_sigma.pdf_tex}}
+  \captionof{figure}{Input Sensitivity \\ Singular Value}
+  \label{si}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=1\linewidth]{So_sigma}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{So_sigma.pdf_tex}}
+  \captionof{figure}{Output Sensitivity \\ Singular Value}
+  \label{so}
+\end{minipage}
+\end{figure}
+					\begin{figure}[H]
+\centering
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=0.6\linewidth]{Ti_sigma}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{Ti_sigma.pdf_tex}}
+  \captionof{figure}{Input Complementary \\Sensitivity Singular Value}
+  \label{ti}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+  \centering
+%  \includesvg[width=0.6\linewidth]{To_sigma}
+ \def\svgscale{0.5}
+			  \tiny{
+			  \input{To_sigma.pdf_tex}}
+  \captionof{figure}{Output Complementary \\Sensitivity Singular Value}
+  \label{to}
+\end{minipage}
+\end{figure}
 			\subsection{Parametric Uncertainities} The example of spring mass damper was a perfect example to demonstrate parametric uncertainities in a physical system. These uncertainities are due to unknown exact values of certain parameters within the plant. These are often useful in defining unmodeled or neglected system dynamics. \\
-			For spring mass damper system, the parametric uncertainities were modeled in MATLAB and the responses of the system in presence of these uncertainities was studied in detail. The bode plot of the uncertain system is shown in \ref{bode_smd}. Also, the step response of the system in presence of these parametric uncertainities of given level is shown in Figure (\ref{step_smd}). Apart from the spring mass damper system, two other systems with parametric uncertainities was simulated on MATLAB. The step response plots for these systems along with other details is shown in Figures (\ref{eg1step}), (\ref{eg2step}).
+			For spring mass damper system, the parametric uncertainities were modeled in MATLAB and the responses of the system in presence of these uncertainities was studied in detail. The bode plot of the uncertain system is shown in \ref{bode_smd}. Also, the step response of the system in presence of these parametric uncertainities of given level is shown in Figure (\ref{step_smd}).
+			
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{bode_para}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{bode_para.pdf_tex}}
+			  \caption{Bode Plot for Spring Mass Damper Uncertain System}
+			 \label{bode_smd}
+		\end{figure}	
+			
+			
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=1.0\textwidth]{step_smd}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{bode_para.pdf_tex}}
+			  \caption{Step Response for Spring Mass Damper Uncertain System}
+			 \label{step_smd}
+		\end{figure}	
+			 Apart from the spring mass damper system, two other systems with parametric uncertainities was simulated on MATLAB. 
 		\section{Small-Gain Theorem}\label{small-gain} In general, the small-gain theorem provides a sufficient condition for stability of a given system. To ensure internal stability, it is widely used in robust control system designs. For a given M-$\Delta$ structure, the theorem states that the system is internally stable if, 
 		\begin{equation}
 			\norm{M\Delta}_{\infty} < 1
@@ -785,6 +1005,18 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 		\sigma_{i}=\sqrt{\lambda_{i}(G^{*}G)}
 		\end{equation}
 		The singular values were calculated and maximum of the values was found. This was verified using the MATLAB function \emph{hinfnorm} of the Robust Control Toolbox. Also, the singular values of this matrix were plotted on logarithmic scale. The plot is shown in Figure (\ref{singular1}).
+		
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.8\textwidth]{singular_value_siso_stable}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{singularvalue_mimo_stable.pdf_tex}}
+			  \caption{Singular Value Plot for SISO system}
+			 \label{singular1}
+		\end{figure}	
 		The singular value plot shows the system gain and the peak of the plot corresponds to the $H_{\infty}$ norm of the given matrix. This peak value represents the maximum gain the system can produce to a given input. For SISO systems, this is equal to the peak value of the frequency response plot. This fact was verified by calculating the $H_{\infty}$ norm of a given SISO system. The result was verified using MATLAB code as well. The system $H(s)=\frac{1}{s+3}$ was chosen and the peak value of the magnitude frequency response was obtained to be equal to 0.33. The MATLAB plot displayed the corresponding value in dB to be equal to -9.54, hence verifying the stated fact. \\
 		Extending the above to multivariable system where the $H_{\infty}$ norm is equal to the maximum singular value of the system, the following system was evaluated:
 		\[A=
@@ -804,8 +1036,19 @@ As explained in Section \ref{bg}, the robust controller design revloves around s
 		D=\begin{bmatrix}
 		0 & 0\\ 0 & 0		\end{bmatrix}
 		\]
-		The maximum singular value for this system is equal to 2.2836. The MATLAB simulation of this system was used to verify the result. The concerned plot is shown in Figure(\ref{singular2}).\\
+		The maximum singular value for this system is equal to 2.2836. The MATLAB simulation of this system was used to verify the result. The concerned plot is shown in Figure(\ref{singular2}).
 		
+				\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includesvg[width=0.8\textwidth]{singularvalue_mimo_stable}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{singularvalue_mimo_stable.pdf_tex}}
+			  \caption{Singular Value Plot for the MIMO system}
+			 \label{singular2}
+		\end{figure}			
 		\section{Conclusion and Future Work}
 The project looked into the basic preliminaries needed for robust control system synthesis and analysis. The linear fractional transformation theory which is widely used to represent all systems with uncertainities was studied. Using the LFT framework, many systems were modeled. Some examples from generalized SISO systems were also taken to represent them in LFT structure. Also, a common physical system, the spring mass damper, with parametric uncertainities was expressed as an LFT. Various other multivariable examples were taken to illustrate the LFT framework which leads to the M-$\Delta$ structure, i.e. the generalized plant $M$ and the uncertainities $\Delta$ are separated out. The uncertainity modeling for various physical systems was done using MATLAB and responses of the plants were plotted in presence of uncertainity. The spring mass damper system uncertainities were modeled as well. Along with this, two other systems were modeled in MATLAB with their uncertainities to illustrate the procedure. To analyze a given physical system with uncertainities, the small-gain theorem was studied. In the end, the $H_{\infty}$ control problem statement was formulated as well, using the developed theories of LFT and small-gain theorem.\\
 Future work comprises of rigorous analysis of different physical systems for robust stability and then synthesis of controller using the McFarlane-Glover $H_{\infty}$ loop-shaping technique.
