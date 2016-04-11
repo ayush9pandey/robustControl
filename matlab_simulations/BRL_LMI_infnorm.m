@@ -8,7 +8,7 @@ display('the inf norm using hinfnorm function is');
 hinfnorm(G)
 display('now solving LMI using bounded real lemma, using mincx');
 setlmis([]); %initiate a new lmi and clear all previous lmis, if any
-LMIs=newlmi; %indetifier for the new lmi that we have created for better
+LMIs=newlmi; %identifier for the new lmi that we have created for better
 %readability, numbers can be used instead.
 
 %declare LMI variables% for BRL we have two variables Y and gamma%
@@ -79,10 +79,10 @@ d=D ;
 % size(d_d)
 % size(c)
 % size(d)
-P=P>0
+P=P>0;
 lmi=[appa pb c_d;bp gam d_d;c d gam]<0;
 lmi=lmi+P;
-P
+%P
 options=sdpsettings('solver','lmilab');
 diag=optimize(lmi,gamma,options);
 
