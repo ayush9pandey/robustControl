@@ -1,29 +1,29 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Background and Motivation}{}% 2
+\BOOKMARK [1][-]{section.2}{Background\040and\040Motivation}{}% 2
 \BOOKMARK [1][-]{section.3}{Preliminaries}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{Vector Norms and Normed Spaces}{section.3}% 4
-\BOOKMARK [3][-]{subsubsection.3.1.1}{Types of norms}{subsection.3.1}% 5
-\BOOKMARK [2][-]{subsection.3.2}{Banach Spaces}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.3}{Inner product and Inner Product Spaces}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Signficance of inner product}{subsection.3.3}% 8
-\BOOKMARK [2][-]{subsection.3.4}{Hilbert Spaces}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Vector\040Norms\040and\040Normed\040Spaces}{section.3}% 4
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Types\040of\040norms}{subsection.3.1}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Banach\040Spaces}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.3}{Inner\040product\040and\040Inner\040Product\040Spaces}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Signficance\040of\040inner\040product}{subsection.3.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Hilbert\040Spaces}{section.3}% 9
 \BOOKMARK [3][-]{subsubsection.3.4.1}{Examples}{subsection.3.4}% 10
 \BOOKMARK [2][-]{subsection.3.5}{Orthogonality}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.6}{Hardy Spaces}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.7}{Well Posedness and Internal Stability}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.8}{Coprime factorization over RH}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.9}{Feedback control interpretation of coprime factorization of a transfer matrix}{section.3}% 15
-\BOOKMARK [1][-]{section.4}{Linear Fractional Transformation}{}% 16
-\BOOKMARK [2][-]{subsection.4.1}{Basic Principle}{section.4}% 17
-\BOOKMARK [2][-]{subsection.4.2}{Spring Mass Damper System : LFT Configuration}{section.4}% 18
-\BOOKMARK [2][-]{subsection.4.3}{Generalized SISO Control System Block Diagram}{section.4}% 19
-\BOOKMARK [2][-]{subsection.4.4}{Other Worked Out Examples}{section.4}% 20
+\BOOKMARK [2][-]{subsection.3.6}{Hardy\040Spaces}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.7}{Well\040Posedness\040and\040Internal\040Stability}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.8}{Coprime\040factorization\040over\040RH}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.9}{Feedback\040control\040interpretation\040of\040coprime\040factorization\040of\040a\040transfer\040matrix}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Linear\040Fractional\040Transformation}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Basic\040Principle}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Spring\040Mass\040Damper\040System\040:\040LFT\040Configuration}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Generalized\040SISO\040Control\040System\040Block\040Diagram}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.4}{Other\040Worked\040Out\040Examples}{section.4}% 20
 \BOOKMARK [1][-]{section.5}{Uncertainities}{}% 21
-\BOOKMARK [2][-]{subsection.5.1}{Unstructured Uncertainities}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.2}{Parametric Uncertainities}{section.5}% 23
-\BOOKMARK [1][-]{section.6}{Small-Gain Theorem}{}% 24
-\BOOKMARK [1][-]{section.7}{H Control}{}% 25
-\BOOKMARK [2][-]{subsection.7.1}{Optimization Problem and Cost Functions}{section.7}% 26
-\BOOKMARK [2][-]{subsection.7.2}{H Suboptimal Solutions}{section.7}% 27
-\BOOKMARK [2][-]{subsection.7.3}{Calculation of H norm}{section.7}% 28
-\BOOKMARK [1][-]{section.8}{Conclusion and Future Work}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{Unstructured\040Uncertainities}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Parametric\040Uncertainities}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Small-Gain\040Theorem}{}% 24
+\BOOKMARK [1][-]{section.7}{H\040Control}{}% 25
+\BOOKMARK [2][-]{subsection.7.1}{Optimization\040Problem\040and\040Cost\040Functions}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.2}{H\040Suboptimal\040Solutions}{section.7}% 27
+\BOOKMARK [2][-]{subsection.7.3}{Calculation\040of\040H\040norm}{section.7}% 28
+\BOOKMARK [1][-]{section.8}{Conclusion\040and\040Future\040Work}{}% 29

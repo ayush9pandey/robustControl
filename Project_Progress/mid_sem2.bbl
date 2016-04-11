@@ -1,0 +1,125 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{prev}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pandey}{P.}%
+     {Ayush}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PA1}
+  \strng{fullhash}{PA1}
+  \field{title}{Final report : Robust controller design using $H_{\infty}$ loop
+  shaping approach}
+  \field{year}{2015}
+\endentry
+
+\entry{Pasca}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Apkarian}{A.}%
+     {Pascal Gahinet;~Pierre}{P.~G.~P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {John Wiley}%
+    {Sons}%
+  }
+  \strng{namehash}{APGP1}
+  \strng{fullhash}{APGP1}
+  \verb{doi}
+  \verb 10.1002/rnc.4590040403
+  \endverb
+  \field{issue}{4}
+  \field{title}{A linear matrix inequality approach to H∞ control}
+  \verb{url}
+  \verb http://gen.lib.rus.ec/scimag/index.php?s=10.1002/rnc.4590040403
+  \endverb
+  \field{volume}{4}
+  \field{journaltitle}{International Journal of Robust and Nonlinear Control}
+  \field{year}{1994}
+\endentry
+
+\entry{yalmip}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {L\"{o}fberg}{L.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LJ1}
+  \strng{fullhash}{LJ1}
+  \field{title}{YALMIP : A Toolbox for Modeling and Optimization in MATLAB.}
+  \field{year}{2015}
+\endentry
+
+\entry{git}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pandey}{P.}%
+     {Ayush}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PA1}
+  \strng{fullhash}{PA1}
+  \field{title}{MATLAB source files}
+  \verb{url}
+  \verb http://github.com/ayush9pandey/robustControl/
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{book}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhou}{Z.}%
+     {Kemin}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Doyle}{D.}%
+     {John~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glover}{G.}%
+     {Keith}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice Hall}%
+  }
+  \strng{namehash}{ZKDJCGK1}
+  \strng{fullhash}{ZKDJCGK1}
+  \field{title}{Robust and Optimal Control}
+  \list{location}{1}{%
+    {Englewood Cliffs, New Jersey}%
+  }
+  \field{year}{1995}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
