@@ -1,5 +1,5 @@
 s=tf('s');
-%%% Example 1 %%%%
+%%% Example 1 : Translatory motion of three wheeled front steered robot. BLDC motor model %%%%
 
 % b= [0 0.001011 0.0006967 1.801e-06];
 % a= [1 1.16 0.3351 0.007859];
@@ -8,7 +8,7 @@ s=tf('s');
 
 % Gamma is 1.0
 
-%%%% Example 2 %%%%
+%%%% Example 2 : Aircraft F8 state space model %%%%
 % A=[-0.8 -0.0006 -12 0;0 -0.014 -16.64 -32.2;1 -0.0001 -1.5 0;1 0 0 0];
 % B=[-19 -3;-0.66 -0.5;-0.16 -0.5;0 0];
 % C=[0 0 0 1;0 0 -1 1];
@@ -24,7 +24,7 @@ s=tf('s');
 
 % Gamma is 2.5095
 
-%%%Example 3%%%
+%%%Example 3 : Mobile robot 2nd order model taken from a research paper referenced in the report%%%
 G=0.3961/(0.2256*s^2+0.3645*s+1.469);
 G=ss(G);
 % [A,B,C,D]=ssdata(G);
