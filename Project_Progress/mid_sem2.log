@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.4.26)  14 MAR 2016 18:07
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013/Debian) (format=xelatex 2015.4.26)  21 APR 2016 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1152,64 +1152,142 @@ Package biblatex Info: Reference segment=0 on input line 53.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 64.
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 64.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 64.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-File: images/logo.jpg Graphic file (type QTm)
-
-<use  "images/logo.jpg" >
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 )
-[1
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 156.
 
-]
-File: images/logo.jpg Graphic file (type QTm)
- <use  "images/logo.jpg" >
-Overfull \hbox (56.71896pt too wide) in paragraph at lines 111--112
-[][] 
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 156.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 156.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--122
+Underfull \hbox (badness 10000) in paragraph at lines 222--224
+
+ []
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 283.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 283.
+
+[4] [5]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 321.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 321.
+
+File: co2.pdf Graphic file (type QTm)
+<use  "co2.pdf" >
+Overfull \hbox (9.7599pt too wide) in paragraph at lines 337--342
+ [][] 
+ []
+
+[6] [7]
+File: images/lft.png Graphic file (type QTm)
+ <use  "images/lft.png" > [8]
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+
+ []
+
+[9]
+File: images/llftpk.png Graphic file (type QTm)
+ <use  "images/llftpk.png" > [10]
+Underfull \hbox (badness 10000) in paragraph at lines 582--585
 
  []
 
 
-Overfull \hbox (38.0721pt too wide) in paragraph at lines 116--122
+Overfull \hbox (55.40576pt too wide) in paragraph at lines 595--595
 [] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
-[1]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 491.
+[11]
+Overfull \hbox (7.37405pt too wide) detected at line 613
+\OML/cmm/m/it/12 C[] \OT1/cmr/m/n/12 = []
+ []
+
+[12]
+Overfull \hbox (68.95274pt too wide) detected at line 744
+[] \OML/cmm/m/it/12 < \OT1/cmr/m/n/12 0
+ []
+
+[13]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 816.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 816.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\infty' on input line 816.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 816.
+
+[14] [15]
+Missing character: There is no ∞ in font cmr12!
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 842.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 842.
  (./mid_sem2.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 491.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 491.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 842.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 842.
 Package logreq Info: Writing requests to 'mid_sem2.run.xml'.
 \openout1 = `mid_sem2.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 491.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 842.
  ) 
 Here is how much of TeX's memory you used:
- 17947 strings out of 493918
- 267304 string characters out of 6150563
- 607310 words of memory out of 5000000
- 21031 multiletter control sequences out of 15000+600000
- 14372 words of font info for 55 fonts, out of 8000000 for 9000
+ 18094 strings out of 493918
+ 269519 string characters out of 6150563
+ 615310 words of memory out of 5000000
+ 21174 multiletter control sequences out of 15000+600000
+ 14770 words of font info for 57 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 68i,5n,98p,966b,1447s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,18n,98p,1079b,1451s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mid_sem2.pdf (2 pages).
+Output written on mid_sem2.pdf (16 pages).

@@ -18,20 +18,20 @@ s=tf('s');
 % W1=[10*(s+0.3)/(s*(s+8)) 0;0 20*(s+1.5)/(s*(s+1))];
 % % [W1a,W1b]=tfdata(W1);
 % % [A1,B1,C1,D1]=tf2ss(W1a,W1b);
-% Gs=G*W1;
+% Gs=G*W1;    
 % Gs=ss(Gs,'min');
-% [A,B,C,D]=ssdata(Gs)
+% [A,B,C,D]=ssdata(Gs); %shaped plant state space
 
 % Gamma is 2.5095
 
-%%%Example 3 : Mobile robot 2nd order model taken from a research paper referenced in the report%%%
-G=0.3961/(0.2256*s^2+0.3645*s+1.469);
-G=ss(G);
-% [A,B,C,D]=ssdata(G);
-W1=[10*(s+0.3)/(s*(s+8)) 0;0 20*(s+1.5)/(s*(s+1))];
-Gs=G*W1;
-Gs=ss(Gs,'min');
-[A,B,C,D]=ssdata(Gs);
+% %%%Example 3 : Mobile robot 2nd order model taken from a research paper referenced in the report%%%
+% G=0.3961/(0.2256*s^2+0.3645*s+1.469);
+% G=ss(G);
+% % [A,B,C,D]=ssdata(G);
+% W1=[10*(s+0.3)/(s*(s+8)) 0;0 20*(s+1.5)/(s*(s+1))];
+% Gs=G*W1;
+% Gs=ss(Gs,'min');
+% [A,B,C,D]=ssdata(Gs);
 %Gamma is 1.0393...with weight 3.2502.
 
 
@@ -80,8 +80,51 @@ lmi_R=[arra_gam rct -L;cr gam eye(n_out);-L' eye(n_out) gam]<0;
 lmi_RS=[R eye(order);eye(order) S]>=0;
 lmi=lmi_S+lmi_R+lmi_RS;
 %P
-options=sdpsettings('solver','lmilab');
-diag=optimize(lmi,gamma,options);
+options=sdpsettings('solver','lmilab','cachesolvers',1,'verbose',0);
+% diag=optimize(lmi,gamma,options);
+% 
+% display('The value of gamma after solving the set of LMIs is');
+% gamma=double(gamma)
+diag=optimize(lmi,R,options);
+diag1=optimize(lmi,S,options);
+diag2=optimize(lmi,gamma,options);
+R=double(R);
+S=double(S);
+gamma=double(gamma);
 
-display('The value of gamma after solving the set of LMIs is');
-gamma=double(gamma)
+%controller reconstruction
+k=rank(eye(order)-R*S);
+if(k<order)
+    display('reduced order controller synthesis');
+    pause(2);
+end
+N=eye(order,k);
+M=(eye(order)-R*S)*pinv(N');
+%calculating Xcl
+
+Xcl=[S eye(order);N' zeros(k,order)]*pinv([eye(order) R;zeros(k,order) M']);
+
+%finding theta, the controller state space
+A0=[A zeros(order,k);zeros(k,order) zeros(k,k)];
+B0=[-L;zeros(k,n_out)];
+C1=[zeros(n_in,order);C];
+C0=[C1 zeros(n_out+n_in,k)];
+D11=[zeros(n_in,n_out);eye(n_out)];
+B_b=[zeros(order,k) B;eye(k) zeros(k,n_in)];
+D12=[eye(n_in);zeros(n_out,n_in)];
+D_d12=[zeros(n_out+n_in,k) D12];
+C2=C;
+C_c=[zeros(k,order) eye(k);C2 zeros(n_out,k)];
+D21=eye(n_out);
+D_d21=[zeros(k,n_out);D21];
+
+phi_xcl=[A0'*Xcl+Xcl*A0 Xcl*B0 C0';B0'*Xcl -gamma*eye(n_out) D11';C0 D11 -gamma*eye(n_out+n_in)];
+P_xcl=[(B_b')*Xcl zeros(n_in+k,n_out) D_d12'];
+D_d=[C_c D_d21 zeros(n_out+k,n_in+n_out)];
+theta=basiclmi(phi_xcl,P_xcl,D_d);
+size(theta)
+
+
+
+
+

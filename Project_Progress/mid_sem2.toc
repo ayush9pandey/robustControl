@@ -1,3 +1,31 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Preliminaries}{}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Linear Matrix Inequality}{}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Bounded Real Lemma}{}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Proof}{}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}LMI Based Approach to $H_{\infty }$ Control}{}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Examples and Simulations}{}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}LMI Toolbox}{}{subsubsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.2}YALMIP Toolbox}{}{subsubsection.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}$H_{\infty }$ Loop Shaping Control}{}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Coprime Factor Uncertainty Description}{}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Robust Stabilization of Coprime Factors}{}{subsection.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Design Steps}{}{subsection.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Future Work}{}{section.5}
