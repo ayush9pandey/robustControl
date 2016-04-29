@@ -1,0 +1,57 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {english}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Preliminaries}{2}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Linear Matrix Inequality}{3}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Bounded Real Lemma}{3}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Proof}{4}{section*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}LMI Based Approach to $H_{\infty }$ Control}{5}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Examples and Simulations}{6}{subsection.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}LMI Toolbox}{6}{subsubsection.3.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.2}YALMIP Toolbox}{7}{subsubsection.3.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}$H_{\infty }$ Loop Shaping Control}{7}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Coprime Factor Uncertainty Description}{7}{subsection.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Robust Stabilization of Coprime Factors}{8}{subsection.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Design Steps}{11}{subsection.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Solvability Conditions}{11}{subsection.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.1}Generalized Plant Description}{11}{subsubsection.4.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.2}Controller Existence Conditions}{14}{subsubsection.4.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Theorem 1}{14}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Theorem 2}{16}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.3}Conditions for $H_{\infty }$ loop-shaping design}{18}{subsubsection.4.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.4}LMI Formulation}{19}{subsubsection.4.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Examples and Simulations}{19}{subsection.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.5.1}A BLDC Hub Motor Driving a Three Wheeled Mobile Robot}{19}{subsubsection.4.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.5.2}A Wheeled Mobile Robot System}{20}{subsubsection.4.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.5.3}F-16 Fighter Aircraft Model}{21}{subsubsection.4.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.6}Controller Design}{21}{subsection.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.7}Controller Design Examples}{22}{subsection.4.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Conclusions and Future Work}{22}{section.5}
