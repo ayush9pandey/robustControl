@@ -1,0 +1,207 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{book}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhou}{Z.}%
+     {Kemin}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Doyle}{D.}%
+     {John~C.}{J.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Glover}{G.}%
+     {Keith}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice Hall}%
+  }
+  \strng{namehash}{ZKDJCGK1}
+  \strng{fullhash}{ZKDJCGK1}
+  \field{title}{Robust and Optimal Control}
+  \list{location}{1}{%
+    {Englewood Cliffs, New Jersey}%
+  }
+  \field{year}{1995}
+\endentry
+
+\entry{aero}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Hyde}{H.}%
+     {R.}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HR1}
+  \strng{fullhash}{HR1}
+  \field{title}{VSTOL first flight on an $H_{\infty}$ control law}
+  \field{year}{1995}
+\endentry
+
+\entry{Gu}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Gu}{G.}%
+     {Da-Wei}{D.-W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Petkov}{P.}%
+     {Petko~H.}{P.~H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Konstantinov}{K.}%
+     {Mihail~M.}{M.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer}%
+  }
+  \strng{namehash}{GDWPPHKMM1}
+  \strng{fullhash}{GDWPPHKMM1}
+  \field{title}{Robust Control Design with MATLAB Second Edition}
+  \list{location}{1}{%
+    {London}%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{Pasca}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Gahinet}{G.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Apkarian}{A.}%
+     {Pierre}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{2}{%
+    {John Wiley}%
+    {Sons}%
+  }
+  \strng{namehash}{GPAP1}
+  \strng{fullhash}{GPAP1}
+  \verb{doi}
+  \verb 10.1002/rnc.4590040403
+  \endverb
+  \field{issue}{4}
+  \field{title}{A linear matrix inequality approach to H$_{\infty}$ control}
+  \verb{url}
+  \verb http://gen.lib.rus.ec/scimag/index.php?s=10.1002/rnc.4590040403
+  \endverb
+  \field{volume}{4}
+  \field{journaltitle}{International Journal of Robust and Nonlinear Control}
+  \field{year}{1994}
+\endentry
+
+\entry{yalmip}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lofberg}{L.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LJ1}
+  \strng{fullhash}{LJ1}
+  \field{title}{YALMIP : A Toolbox for Modeling and Optimization in MATLAB.}
+  \field{year}{2015}
+\endentry
+
+\entry{git}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Pandey}{P.}%
+     {Ayush}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PA1}
+  \strng{fullhash}{PA1}
+  \field{title}{MATLAB source files}
+  \verb{url}
+  \verb http://github.com/ayush9pandey/robustControl/
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{robot}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Mahfouz}{M.}%
+     {Ahmad~A.}{A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Aly}{A.}%
+     {Ayman~A.}{A.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Salem}{S.}%
+     {Farhan~A.}{F.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MAAAAASFA1}
+  \strng{fullhash}{MAAAAASFA1}
+  \field{title}{Mechatronics Design of a Mobile Robot System}
+  \field{journaltitle}{International Journal of Intelligent Systems and
+  Applications}
+  \field{year}{2013}
+\endentry
+
+\entry{aircraft}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Stevens}{S.}%
+     {Brian~L.}{B.~L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lewis}{L.}%
+     {Frank~L.}{F.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley}%
+  }
+  \strng{namehash}{SBLLFL1}
+  \strng{fullhash}{SBLLFL1}
+  \field{title}{Aircraft Control and Simulation, 2nd Edition}
+  \field{year}{2003}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

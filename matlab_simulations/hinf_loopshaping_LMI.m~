@@ -166,9 +166,9 @@ N=eye(order,k);
 M=(eye(order)-R*S)*pinv(N');
 %calculating Xcl
 
-Xcl=[eye(order) R;zeros(k,order) M']\[S eye(order);N' zeros(k,order)];
+Xcl=[S eye(order);N' zeros(k,order)]*inv([eye(order) R;zeros(k,order) M']);
 [~,p]=chol(Xcl);
-if Xcl~=Xcl'
+if Xcl~= Xcl'
     display('Xcl is not positive definite and/or symmetric, returning');
     return
 end
