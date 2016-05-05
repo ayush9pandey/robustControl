@@ -2,21 +2,15 @@
 s=tf('s');
 L=[87.8 -86.4;108.2 -109.6];
 G=L/(75*s+1);
-Linv=[0.3994   -0.3149;
-    0.3943   -0.3200];
-K=(0.7*(75*s+1)*Linv)/s;
+K=(0.7*(75*s+1)*inv(L)/s);
 Wp=(s+0.1)/(2*s);
 Wo=(s+0.2)/(0.5*s+1);
-Lo=minreal(G*K,0.1);
-Lo=Lo(1,1);
-T=minreal(feedback(Lo,eye(1)),0.1);
-S=minreal((eye(1)-T),0.1);
-
-
-TF1=minreal(-Wo*T,0.1);
-TF2=minreal(Wo*S*G,0.1);
-TF3=minreal(Wp*S,0.2);
-TF4=minreal(Wp*S*G,0.2);
+S=inv(1+(G*K));
+T=G*K*S;
+TF1=-Wo*T;
+TF2=Wo*S*G;
+TF3=Wp*S;
+TF4=Wp*S*G;
 
 flag=isstable(TF1);
 if flag == 1
@@ -45,7 +39,3 @@ if flag == 1
     
 else display('Nominal Stability violated');
 end
-
-hinfnorm(Wo*T)
-hinfnorm(Wp*S)
-hinfnorm(Wp*S*G)
