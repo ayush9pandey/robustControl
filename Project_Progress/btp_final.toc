@@ -6,104 +6,104 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2}Background and Motivation}{4}{section.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}Preliminaries}{5}{section.3}
+\contentsline {section}{\numberline {3}Preliminaries}{6}{section.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}Vector Norms and Normed Spaces}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.1}Vector Norms and Normed Spaces}{6}{subsection.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.1}Types of norms}{5}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Types of norms}{6}{subsubsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{p-Norm}{5}{section*.4}
+\contentsline {paragraph}{p-Norm}{6}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}Inner product and Inner Product Spaces}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Inner product and Inner Product Spaces}{6}{subsection.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3}Hilbert Spaces}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.3}Hilbert Spaces}{7}{subsection.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1}Examples}{6}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.1}Examples}{7}{subsubsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4}Hardy Spaces}{7}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Hardy Spaces}{8}{subsection.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{$\mathbb {L}_{2}(j\mathbb {R})$ space}{7}{section*.5}
+\contentsline {paragraph}{$\mathbb {L}_{2}(j\mathbb {R})$ space}{8}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Hardy Spaces}{7}{section*.6}
+\contentsline {paragraph}{Hardy Spaces}{8}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5}Well Posedness and Internal Stability}{8}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.5}Well Posedness and Internal Stability}{9}{subsection.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6}Coprime factorization over $\mathbb {RH_{\infty }}$}{8}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.6}Coprime factorization over $\mathbb {RH_{\infty }}$}{9}{subsection.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Linear Fractional Transformation}{9}{section.4}
+\contentsline {section}{\numberline {4}Linear Fractional Transformation}{10}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Basic Principle}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.1}Basic Principle}{11}{subsection.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Spring Mass Damper System : LFT Configuration}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Spring Mass Damper System : LFT Configuration}{12}{subsection.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Generalized SISO Control System Block Diagram}{14}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.3}Generalized SISO Control System Block Diagram}{15}{subsection.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Other Worked Out Examples}{16}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.4}Other Worked Out Examples}{17}{subsection.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Uncertainities}{18}{section.5}
+\contentsline {section}{\numberline {5}Uncertainities}{19}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Unstructured Uncertainities}{19}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.1}Unstructured Uncertainities}{20}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Parametric Uncertainities}{21}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.2}Parametric Uncertainities}{22}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Small-Gain Theorem}{23}{section.6}
+\contentsline {section}{\numberline {6}Small-Gain Theorem}{24}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}$H_{\infty }$ Control}{24}{section.7}
+\contentsline {section}{\numberline {7}$H_{\infty }$ Control}{25}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Optimization Problem and Cost Functions}{24}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.1}Optimization Problem and Cost Functions}{25}{subsection.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}$H_{\infty }$ Suboptimal Solutions}{24}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.2}$H_{\infty }$ Suboptimal Solutions}{25}{subsection.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.3}Calculation of $H_{\infty }$ norm}{25}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.3}Calculation of $H_{\infty }$ norm}{26}{subsection.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}LMI Based Approach to $H_{\infty }$ Control}{26}{section.8}
+\contentsline {section}{\numberline {8}LMI Based Approach to $H_{\infty }$ Control}{27}{section.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Preliminaries}{26}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.1}Preliminaries}{27}{subsection.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.1}Linear Matrix Inequality}{27}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Linear Matrix Inequality}{28}{subsubsection.8.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.2}Bounded Real Lemma}{27}{subsubsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.2}Bounded Real Lemma}{28}{subsubsection.8.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Proof}{28}{section*.24}
+\contentsline {paragraph}{Proof}{29}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.3}LMI Toolbox}{29}{subsubsection.8.1.3}
+\contentsline {subsubsection}{\numberline {8.1.3}LMI Toolbox}{30}{subsubsection.8.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.1.4}YALMIP Toolbox}{29}{subsubsection.8.1.4}
+\contentsline {subsubsection}{\numberline {8.1.4}YALMIP Toolbox}{30}{subsubsection.8.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}LMI Approach}{30}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.2}LMI Approach}{31}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {8.2.1}Numerical Example}{31}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.1}Numerical Example}{32}{subsubsection.8.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}$H_{\infty }$ Loop-Shaping Control}{31}{section.9}
+\contentsline {section}{\numberline {9}$H_{\infty }$ Loop-Shaping Control}{32}{section.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1}Coprime Factor Uncertainty Description}{31}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.1}Coprime Factor Uncertainty Description}{32}{subsection.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.2}Robust Stabilization of Coprime Factors}{32}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.2}Robust Stabilization of Coprime Factors}{33}{subsection.9.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.3}Design Steps}{35}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.3}Design Steps}{36}{subsection.9.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.4}Solvability Conditions}{35}{subsection.9.4}
+\contentsline {subsection}{\numberline {9.4}Solvability Conditions}{36}{subsection.9.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.4.1}Generalized Plant Description}{35}{subsubsection.9.4.1}
+\contentsline {subsubsection}{\numberline {9.4.1}Generalized Plant Description}{36}{subsubsection.9.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.4.2}Controller Existence Conditions}{38}{subsubsection.9.4.2}
+\contentsline {subsubsection}{\numberline {9.4.2}Controller Existence Conditions}{39}{subsubsection.9.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Theorem 1}{38}{section*.28}
+\contentsline {paragraph}{Theorem 1}{39}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Theorem 2}{40}{section*.29}
+\contentsline {paragraph}{Theorem 2}{41}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.4.3}Conditions for $H_{\infty }$ loop-shaping design}{42}{subsubsection.9.4.3}
+\contentsline {subsubsection}{\numberline {9.4.3}Conditions for $H_{\infty }$ loop-shaping design}{43}{subsubsection.9.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.4.4}LMI Formulation}{43}{subsubsection.9.4.4}
+\contentsline {subsubsection}{\numberline {9.4.4}LMI Formulation}{44}{subsubsection.9.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.5}Examples and Simulations}{43}{subsection.9.5}
+\contentsline {subsection}{\numberline {9.5}Examples and Simulations}{44}{subsection.9.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.5.1}A BLDC Hub Motor Driving a Three Wheeled Mobile Robot}{43}{subsubsection.9.5.1}
+\contentsline {subsubsection}{\numberline {9.5.1}A BLDC Hub Motor Driving a Three Wheeled Mobile Robot}{44}{subsubsection.9.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.5.2}A Wheeled Mobile Robot System}{44}{subsubsection.9.5.2}
+\contentsline {subsubsection}{\numberline {9.5.2}A Wheeled Mobile Robot System}{45}{subsubsection.9.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {9.5.3}F-16 Fighter Aircraft Model}{45}{subsubsection.9.5.3}
+\contentsline {subsubsection}{\numberline {9.5.3}F-16 Fighter Aircraft Model}{46}{subsubsection.9.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.6}Controller Design}{46}{subsection.9.6}
+\contentsline {subsection}{\numberline {9.6}Controller Design}{47}{subsection.9.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10}Conclusion and Future Work}{46}{section.10}
+\contentsline {section}{\numberline {10}Conclusion and Future Work}{49}{section.10}

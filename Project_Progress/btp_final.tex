@@ -190,6 +190,32 @@ For application of a robust controller to a particular application the constrain
 The robust control theory is covered in great detail in the book by authors Kemin Zhou, Keith Glover and J C Doyle in \say{Robust and Optimal Control} \cite{book}. The book was published in 1995 and hence it covers most of the research and contributions by various pioneers to modern control theory. $H_{\infty}$ methods in control theory are used to design controllers which guarantee specific performance with robust stability. The $H_{\infty}$ control problem is expressed as an optimization problem. Loop shaping control technique is a part of classical control that has been existent in control theory since a long time. Hence, the amalgamation of the two, known as $H_{\infty}$ loop-shaping design method combines the two methods and achieves a good robust performance and stability. \\
 The progress in robust control design techniques has been enormous and has even been applied to the industry to an aircraft. The 1995 publication breifs about the same \cite{aero}. Despite the popularity, the advantages of a robust controller are such that in future most of the controllers would be preferred to be designed using a robust algorithm and hence there remains a great scope of learning and research in this field. With regards to application of robust control theory, Gu, Petkov and Konstantinov published a book titled \say{Robust Control Design with MATLAB} \cite{Gu}. The book elucidates the robust control design procedure using MATLAB and considers various multivariable systems and their controller designs as case studies. The second edition of this book demonstrates the use of the latest Robust Control Toolbox v3.0.\\
 The motivation for this project comes from the fact that usually great amount of experimental, hit and trial based methods are employed for controlling a mobile robot. In this sense, if a robust control system can be designed it would provide great ease for further development of technology on robots. Robotics is finding it's way into our lives at a pace which was never expected and is more than ever before. The applications range from big industries to small household chores and beyond. In this changing world, the control of such a mobile robot is essential and important to be achieved in a very robust manner so that more and more complex applications can be designed on top of it. \\
+
+Particularly, on working with a tricycle design mobile robot driven by a BLDC hub motor for translation, we found that the PID controller being used previously for speed control was susceptible to parameter variations and the performance when the road terrain is not smooth is extremely poor. 
+
+The PID controller needs to be tuned experimentally time and again depending on the conditions but still the controller is not robust as shown in the input output responses below. 	\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includegraphics[scale=0.6]{step}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Step reference input given to the robot}
+			 \label{step}
+		\end{figure}	\begin{figure}[H]
+ 
+			  \centering
+			  
+			  \includegraphics[scale=0.75]{step_out}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{ulft.pdf_tex}}
+			  \caption{Output step response with PID controller}
+			 \label{step_out}
+		\end{figure}
+		As shown in Fig.(\ref{step}), a step input for speed was given to the robot. The output speed response because of the uneven terrain of the road and because of the parameter variations is shown in Fig.(\ref{step_out}). A sudden dip in the output response plot is because of a small pothole that the robot ran into on the road, it took almost 4 to 5 seconds for the robot to regain its reference steady state value after hitting that pothole. It is clear that a robust controller is needed here to improve the performance of this system and also to do away with the need of tuning the controller everytime with changing parameters/environmental conditions.
+ 
 \label{bg}
 \section{Preliminaries}
 
@@ -2072,9 +2098,51 @@ Solving the LMIs we obtain $\gamma=3.1587$. With this we move on to controller d
 	\end{bmatrix}.
 	\end{equation}
 	 \end{enumerate}
+	 Using the method proposed above, controller was reconstructed for the examples of physical systems given above. The step responses for the plant with $H_{\infty}$ loop-shaping controller design were plotted. Also, bode plots for the controller designed were plotted. Some of the results and plots are shown here.
 	 
+	 	
+			\begin{figure}[H]
+			  \centering
+			  \includegraphics[scale=0.3]{bodeGGs}
+%			  \includesvg[width=1.0\textwidth]{co}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{co2.pdf}}
+			  \caption{Bode plots for nominal ($G$) and shaped plants $G_{s}$}
+	
+		\end{figure}	
+			\begin{figure}[H]
+			  \centering
+			  \includegraphics[scale=0.3]{bodeKinf}
+%			  \includesvg[width=1.0\textwidth]{co}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{co2.pdf}}
+			  \caption{Bode plot for the $H_{\infty}$ loop-shaping controller designed $K_{\infty}$}
+		
+		\end{figure}	
+			\begin{figure}[H]
+			  \centering
+			  \includegraphics[scale=0.3]{singluar_values}
+%			  \includesvg[width=1.0\textwidth]{co}
+%			  \def\svgscale{5.5}
+%			  \tiny{
+%			  \input{co2.pdf}}
+			  \caption{Singular value plot for $G$ and complimentary sensitivity $T$}
+			
+		\end{figure}	
 	\section{Conclusion and Future Work}
 
-In this project we covered the basics of robust control theory and studied the theory towards general $H_{\infty}$ control framework. Using which, $H_{\infty}$ loop-shaping design procedure was studied.\\ The project initially dealt with robustness analysis of uncertain systems. The linear fractional transformation theory which is widely used to represent all systems with uncertainities was studied. Using the LFT framework, many systems were modeled. A common physical system, the spring mass damper, with parametric uncertainities was expressed as an LFT and robustness analysis for the same was done. Subsequently, based on the performance and robust stability specifications, general $H_{\infty}$ problem was formulated.  \\After the analysis, controller design was considered using LMI approach which is computationally more efficient than conventional $H_{\infty}$ controller design methods. Finally, an $H_{\infty}$ loop-shaping controller design procedure using LMI approach was demonstrated. The controller existence conditions were derived and formulated as solvable LMIs. This approach was simulated on MATLAB for various physical systems and the robust stability margins achievable were calculated. \\ The future work in this project would be to first simulate some numerical examples to obtain a controller using the method suggested for the physical systems descirbed in this report. Henceforth, the method would be applied to design the controller for a mobile robotic system to achieve robust stability and performance under parameter variations and environmental uncertainties. The controller developed up till now is an LTI robust controller. Hence, to successfully apply this controller to a non-linear system various challenges would need to be overcome.
+In this project we covered the basics of robust control theory and studied the theory towards general $H_{\infty}$ control framework. Using which, $H_{\infty}$ loop-shaping design procedure was studied.\\ 
+In brief, the work done in this project can be concluded as follows:
+\begin{enumerate}
+\item Various uncertain systems were analyzed for robustness. Simulations for the same on MATLAB were presented. 
+\item The linear fractional transformation theory which is widely used to represent all systems with uncertainities was studied. Using the LFT framework, many systems were modeled. A common physical system, the spring mass damper, with parametric uncertainities was expressed as an LFT and robustness analysis for the same was done. Subsequently, based on the performance and robust stability specifications, general $H_{\infty}$ problem was formulated for the spring mass damper system. 
+\item Controller design was considered using LMI approach which is computationally more efficient than conventional $H_{\infty}$ controller design methods. 
+\item An $H_{\infty}$ loop-shaping controller design procedure using LMI approach was demonstrated. The controller existence conditions were derived and formulated as solvable LMIs. This approach was simulated on MATLAB for various physical systems and the robust stability margins achievable were calculated. 
+\item A simplified model for speed control of an autonomous robot was derived using MATLAB's system identification technique. $H_{\infty}$ loop-shaping control design method using LMI approach presented in this project was applied to the simplified TF model. A controller was also designed for this system using the methods proposed by solving LMIs on MATLAB. Simulation results for the same were presented.
+\end{enumerate}
+
+The future work in this project would be to analyze the controller designs presented for robust stability and performance. Moreover, the simulations need to be verified by implementation on the real mobile robotic system. Also, as previously mentioned an overly simplified model was considered for the mobile robot by only identifying the TF between voltage input and speed of the BLDC motor. Certainly, there are many more factors that need to be taken care of while modeling the system, which is inherently nonlinear. The controller developed up till now is an LTI robust controller. Hence, to successfully apply this controller to a non-linear system various challenges would need to be overcome.
 \printbibliography 
 \end{document}

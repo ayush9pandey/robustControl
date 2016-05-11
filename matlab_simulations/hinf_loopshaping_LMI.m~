@@ -4,7 +4,7 @@ s=tf('s');
 b= [0 0.001011 0.0006967 1.801e-06];
 a= [1 1.16 0.3351 0.007859];
 G=tf(b,a)
-%%%Finding shaped plant
+Finding shaped plant
 
 W1=10*(s+0.3)/(s*(s+8))
 Gs=G*W1;
@@ -13,18 +13,18 @@ Gs=ss(Gs,'min');
 %Gamma is 1.3937
 
 % %%%% Example 2 : Aircraft F8 state space model %%%%
-% A=[-0.8 -0.0006 -12 0;0 -0.014 -16.64 -32.2;1 -0.0001 -1.5 0;1 0 0 0];
-% B=[-19 -3;-0.66 -0.5;-0.16 -0.5;0 0];
-% C=[0 0 0 1;0 0 -1 1];
-% D=zeros(2,2);
-% Gss=ss(A,B,C,D);
-% G=tf(Gss);
-% W1=[10*(s+0.3)/(s*(s+8)) 0;0 20*(s+1.5)/(s*(s+1))];
-% % [W1a,W1b]=tfdata(W1);
-% % [A1,B1,C1,D1]=tf2ss(W1a,W1b);
-% Gs=G*W1;    
-% Gs=ss(Gs,'min');
-% [A,B,C,D]=ssdata(Gs) %shaped plant state space
+A=[-0.8 -0.0006 -12 0;0 -0.014 -16.64 -32.2;1 -0.0001 -1.5 0;1 0 0 0];
+B=[-19 -3;-0.66 -0.5;-0.16 -0.5;0 0];
+C=[0 0 0 1;0 0 -1 1];
+D=zeros(2,2);
+Gss=ss(A,B,C,D);
+G=tf(Gss);
+W1=[10*(s+0.3)/(s*(s+8)) 0;0 20*(s+1.5)/(s*(s+1))];
+% [W1a,W1b]=tfdata(W1);
+% [A1,B1,C1,D1]=tf2ss(W1a,W1b);
+Gs=G*W1;    
+Gs=ss(Gs,'min');
+[A,B,C,D]=ssdata(Gs) %shaped plant state space
 % Gamma is 2.5095
 
 % 
